@@ -1,4 +1,4 @@
-# SYNAPSE · P4H Bionics
+# SYNAPSE
 
 App web (PWA) para señales y sensores, bitácora de prototipos, biomecánica, circuitos y pilotos.
 Funciona en laptop, Android e iPhone, sin conexión, y guarda los datos **solo en el dispositivo** (IndexedDB).
@@ -12,22 +12,24 @@ Para usarla localmente abre **`synapse.html`**, la versión de archivo único, q
 Sus datos quedan en ese navegador y son independientes de la versión publicada; para moverlos usa *Exportar → Importar (Fusionar)*.
 Si cambias el código, regenera el archivo único con `python3 tools/build.py`.
 
-## Publicar en GitHub Pages (una sola vez)
+## Publicar en GitHub Pages
 
-1. Crea un repositorio nuevo en GitHub, por ejemplo `synapse` (puede ser público: solo se publica el código, nunca tus datos).
-2. Sube **el contenido** de esta carpeta (no la carpeta en sí) a la raíz del repositorio:
-   - Desde la web: *Add file → Upload files*, arrastra todos los archivos y carpetas, y luego *Commit changes*.
-   - O con git: `git init && git add . && git commit -m "SYNAPSE etapa 0" && git branch -M main && git remote add origin https://github.com/TU_USUARIO/synapse.git && git push -u origin main`
-3. En el repositorio: *Settings → Pages → Build and deployment → Source: Deploy from a branch*, rama `main`, carpeta `/ (root)`, *Save*.
-4. En uno o dos minutos la app queda en `https://TU_USUARIO.github.io/synapse/`.
-5. Ábrela en cada dispositivo e **instálala**:
+Lo que se publica es la carpeta **`dist/`**: la app completa en archivos planos, **sin subcarpetas**, para que la subida por la web de GitHub no deje nada fuera.
+
+1. Genera `dist/` con `python3 tools/build.py` (el zip `synapse-github-pages.zip` ya la trae lista).
+2. En el repositorio: *Add file → Upload files*, selecciona **todos** los archivos de `dist/` (Ctrl+A), arrástralos y *Commit changes*.
+3. Solo la primera vez: *Settings → Pages → Source: Deploy from a branch*, rama `main`, carpeta `/ (root)`, *Save*.
+4. En 1–2 minutos la app queda en `https://TU_USUARIO.github.io/REPO/`.
+5. Instálala en cada dispositivo:
    - Android / Chrome / Edge: menú → *Instalar app* (o el botón en *Datos y respaldo*).
    - iPhone: Safari → *Compartir* → *Agregar a pantalla de inicio* (esto también evita que Safari borre los datos).
 
+Si prefieres publicar el código fuente modular (carpetas `js/`, `css/`, `icons/`), súbelo con git o arrastrando las carpetas completas; con el selector de archivos de la web las carpetas no se suben.
+
 ## Actualizar la app
 
-1. Reemplaza los archivos en el repositorio.
-2. **Sube el número en `version.js`** (por ejemplo `0.1.0` → `0.2.0`). Así los dispositivos detectan la nueva versión y muestran el aviso *Actualizar*.
+1. Sube el número en `version.js` del código fuente, ejecuta `python3 tools/build.py` y reemplaza los archivos de `dist/` en el repositorio.
+2. **El número de `version.js`** (por ejemplo `0.1.0` → `0.2.0`). Así los dispositivos detectan la nueva versión y muestran el aviso *Actualizar*.
 
 Tus datos no se tocan al actualizar.
 

@@ -1,7 +1,7 @@
 {
-  "name": "SYNAPSE · P4H Bionics",
+  "name": "SYNAPSE",
   "short_name": "SYNAPSE",
-  "description": "Señales, bitácora de prototipos, biomecánica, circuitos y pilotos para P4H Bionics.",
+  "description": "Señales, bitácora de prototipos, biomecánica, circuitos y pilotos.",
   "lang": "es",
   "start_url": "./",
   "scope": "./",
