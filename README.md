@@ -1,4 +1,4 @@
-# SYNAPSE · P4H Bionics
+# SYNAPSE · 
 
 App web (PWA) para señales y sensores, bitácora de prototipos, biomecánica, circuitos y pilotos.
 Funciona en laptop, Android e iPhone, sin conexión, y guarda los datos **solo en el dispositivo** (IndexedDB).
