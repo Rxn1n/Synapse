@@ -1,9 +1,16 @@
-# SYNAPSE · 
+# SYNAPSE · P4H Bionics
 
 App web (PWA) para señales y sensores, bitácora de prototipos, biomecánica, circuitos y pilotos.
 Funciona en laptop, Android e iPhone, sin conexión, y guarda los datos **solo en el dispositivo** (IndexedDB).
 
 Estado: **etapa 0 (núcleo)** lista. Los módulos se agregan por etapas.
+
+## Abrir sin publicar: `synapse.html`
+
+**No abras `index.html` con doble clic**: el navegador bloquea los módulos y se queda cargando (ahora muestra un aviso).
+Para usarla localmente abre **`synapse.html`**, la versión de archivo único, que sí funciona con doble clic en Chrome, Edge o Firefox de la laptop.
+Sus datos quedan en ese navegador y son independientes de la versión publicada; para moverlos usa *Exportar → Importar (Fusionar)*.
+Si cambias el código, regenera el archivo único con `python3 tools/build.py`.
 
 ## Publicar en GitHub Pages (una sola vez)
 
