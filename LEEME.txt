@@ -1,0 +1,7 @@
+SYNAPSE: archivos para GitHub Pages
+
+1. En tu repositorio: Add file -> Upload files.
+2. Selecciona TODOS los archivos de esta carpeta (Ctrl+A) y arrástralos. No hay subcarpetas.
+3. Commit changes. En 1-2 minutos la app se actualiza.
+Para cada versión nueva repite lo mismo: los archivos se reemplazan.
+(.nojekyll es un archivo oculto: si no lo ves, no pasa nada, no es obligatorio.)

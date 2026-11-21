@@ -11,11 +11,267 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="SYNAPSE">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0iIzBiMTAxNiIvPjxnIHN0cm9rZT0iIzNlZTZjNCIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMjU2IDI2MiBMMTM4IDE0OCIvPjxwYXRoIGQ9Ik0yNTYgMjYyIEwzODIgMTU4Ii8+PHBhdGggZD0iTTI1NiAyNjIgTDI1NiA0MDQiLz48L2c+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjYyIiByPSI2MCIgZmlsbD0iIzNlZTZjNCIvPjxjaXJjbGUgY3g9IjEzOCIgY3k9IjE0OCIgcj0iMzIiIGZpbGw9IiM1YWE5ZmYiLz48Y2lyY2xlIGN4PSIzODIiIGN5PSIxNTgiIHI9IjMyIiBmaWxsPSIjZmY4YTVjIi8+PGNpcmNsZSBjeD0iMjU2IiBjeT0iNDA0IiByPSIzMiIgZmlsbD0iIzNlZTZjNCIvPjwvc3ZnPg==" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/app.css">
-  <script src="version.js"></script>
+  <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAACXBIWXMAAC4jAAAuIwF4pT92AAAKy0lEQVR4nO2dfWxV9RnH+f+BtveW/O5tb195aUspt72XwsX29i1Y3oYEWkAKZbO6wHTuxehecE4WSaF0iqLG8SJzDEeAIBbjAtphkYKJmyZm6lTGhClgsv1hTBbiMsez/I52GW3v27nn3t/v/Pb945M0aZv+zvN8nqfPOef+zplAeYIBYkCGxGCC6gUAxIAgNCRAIxDo0JBAGB8DjBwaJAEICA0JUAiEDg0JyPAYYOTQIAlAQGhIgEIgdGhIQIbHACOHBkkAAkJDAhQCoUNDAjI8Bhg5NEgCEBAaEqAQCB0aEpDhMcDIoUESgIDQkACFQOjQkIAMjwFGDg2SAASEhgQoBEKHhgRkeAwwcmiQBCAgNCRAIRA6NCQgw2OAkUODJAABoSEBCoHQoSEBGR4DjBwaJAEICA0JUAiEDg0JyPAYYOTQIAlAQGhIgEIgdGhIQIbHACOHBkkAAkJDAhQCoUNDAjI8Bhg5NEgCEBAaEqAQCB0aEpDhMcDIoUESgIDQkACFQOjQkIAMjwFGDg2SAASEhgQoBEKHhgRkeAwwcmiQBCAgNCRAIRA6NCQgw2OAkUODJAABoSEBCoHQoSEBGR4DjBwaJAEICJ2sBJPLajm8dhsv2vo6d+z5hDv3/p2/9sg7PG/jHg7UtkOmPLMKytwO7fFxaE0vrz5wjdce5vE5dJ2b7z3Kuf4p6tcLGELHkbnpniOxRR7F0h1/4rxAhXFS+X2FvDxczd9qDvE3o3W8IFjJnnyf8nVlEiM7dKirN2mZR2jffNoqBNVrd4LglDI+els7/3PbOub+7hv4bMsafqwjygF/QPk6M8EEE2fmuGNGHKbPv0P5+tNlfUOQr21dO0bk0Xz8wEpuqJqmfL1OY5zQ4fU/tyWzZOGWc8rXnw4rZlfzF31ju3IsPn3oVqubq163kxgn9KK+N2wL3XXwX649QSwtLLLGiWRlHuHNe27hiR7163cK44Tu3Ps320JL/DOiyo/BDjtWNKYs8whdkRrl63cK44Re9cynaQldOGu+8mOww6WfdNoWWp5Aql6/Uxgn9C2Pvp+W0N6SauXHkCpTAsW2Zeb+br54f6fyY3AK44S+6c59tmVe9sQF5eu3Q6RialpCX9u6VvkxOIVxQheFFll3AG1d5Rh8h7017psnq0tL0xL6kwdXKT8GpzBOaEnrDwZSlvnWgc+59fJrPO/NAfYGa5UfQyrIu3//GOcmCifJ8N1LlB+DUxgpdG7BNF6283zyl+uOfsE3n3+Lm6+etbjpjy9yfv1s5ceRLEVdK3jo4AO2hd60cI7yY3AKI4WWeIqqeMGWcwllXj3w+Q0yj9Dw9m958lzNE+3x8dT7NnLz5TO84e1jfL1/fcoyy5srJt0GN1bokYRXtG+0PjradejfN54APn6B2/adssaM0TKP0Pj+SRbNjeqPYxxyCoo5uP/hG9Z79Pj2lIXuaQwqPxYnMVvoUWNIQXUzB2oXsLfkqxM/j4+rtm+KKbQl9Qcvsa+lSfn6/xdPZTXXD+4fs9a2y2d46PCDSYl8fXs3/3RxRPmxOM3/jdDxmL75+/Gl/ssp9i/S44aLaG22ZvxYa225OsxPDj7Jn/XFlvnDTR28st5919uTAUJ/FQhrFo0jdfTDU1ywRO0dteJ1nRy9OBS/+N47aRVfoT/AG5rq+EB3G5+6czGf2LCQ96xp4dVzZhr9mWgInYrUl05zoGNp1pM0Md/PFQ/dG3dtkshrRzg/FFYuFYTWiLK7vsHNV4ZjStP019McWLUsa+uZFCjl4MHHEspce+QJzikuVx4/1aBDjyf1xm7rUlhMqT8+wyVfT+LumsdnncDlh8MW8utUdsXIGzxzzx5KKHNV/4+tLk4aCKUaCB0jMMXdK7npo1fjSl3a0zVWwpoaLv/u7Rx6fhdHL74ydmy5+Ir1vfLv9LB3Zuzb7HJel5cNE41AJT1rlEtEGgGh4wSnqKsjrtRyNCn7ds+XIodCPOuX/XHHlfGoe+6pMTdwyjass0abeL/X8O4J9t3cplwg0gwInSBAgeVLrE4YW65hDr2wJ774CZC/W7XtRzypoJhnPHx/wp+fM/Qse6tnKpeHNARCJxGkwmWLE14uc4LGD15O+DPBZ/qtu4SqxSFNgdBJBsq/oI2jF36XcanjjTfy0h15cfJHENqZ6vfNb+XonwezLrP87yBvqqjufuQC0KFTDJiINnDTpcyPHyPMe+u49TdVi0IuAUKnGDB5NUNessuGzPVDz3LeNPMeUUYQWh+CB3ZkrTsHf/2I8uMll4EOnUKw5E2TrM7PV4ZxeS4PQmes+su/d0d2hb56lsvvvl151yMXgQ6dQrBCA7uzLnTo2C+US0IuAkInGyyv3/pMdLaFlpsLTHnML0FoffBUzMi6zCPkTa9UfvzkEtChkwxU/uywMqHlR09Vi0IuAUJDaOUSQmgFgcLIIZTLig7tZLBwUsiqZYXQDgdL7jTJ/mW7p5RLQi4CM3QKwZLbprItdNldtymXhFwEhE4hWHIPYKpbrNICt74ZQme4A4x+nlwmmbVvu/KORy4DHTrFgHnr6hJuYHUC+Te8te56TjVpAIS2ETS5oTXTQlduuU+5HORCILSNoE2cXGB9aChTMstHG8i/oVoOciEQ2mbgcsumcuTcYcdlnnvuEOeUuvPln6QBEDqN4Enx5HVip2QOv7Cbc6eY9/5tgtDuQY4Glb0/TOtEUf6unJkxZgh0aF2QTzKauas35evUtQd34mpGnnN5wMiRAbHltql4u1tCA7usZ+LhcV7C8cYCoTPUsSf5i2MKLb+n+j8KGQqEhtCsWkII7QLQoQWEVi0hhBauByMHhGbVEkJoF4CRQ0Bo1RJCaOF6MHJAaFYtIYR2ARg5BIRWLSGEFq4HIweEZtUSQmgXgJFDQGjVEkJo4XowcmQisB6f9S7wWB9Okq9dxiNyBYR2A/IlP+EX9ybenXJ8N+dOna58vWQY6NAOyxz5/bGkP9wfef05bLnKg9BGvbICz64T6NA6EuhYantPYWD5EuXrJ0PAyOFQIIO/edS20LPwPkKG0JqRzjvAo+dfVr5+MgR0aAeCmFNcblvm/+4zLCpTLgMZAIR2IIiTCkvSFjqnABtnCULrQ+N7J23L3PDuCeXrJ0NAh3YokDVP99kWumZ3r3IRyBAgtEOB9LW32RbaN79VuQhkCBDawWDKJ+6n3J2f7lMuARkEhHb45LB+cH/SMs9+6Vc4GcyD0NpLXbN3W/yHNl4Zth7siCsbAh3aLfhaolz9+M848sbz3PTRqxaRPxzjGTs3s2hpVL4+MhSMHNkItNf/JRoknAwHQmuQBCAgNCRAIRA6NCQgw2OAkUODJAABoSEBCoHQoSEBGR4DjBwaJAEICA0JUAiEDg0JyPAYYOTQIAlAQGhIgEIgdGhIQIbHACOHBkkAAkJDAhQCoUNDAjI8Bhg5NEgCEBAaEqAQCB0aEpDhMcDIoUESgIDQkACFQOjQkIAMjwFGDg2SAASEhgQoBEKHhgRkeAwwcmiQBCAgNCRAIRA6NCQgw2OAkUODJAABoSEBCoHQoSEBGR4DjBwaJAEICA0JUAiEDg0JyPAYYOTQIAlAQGhIgEIgdGhIQIbHACOHBkkAAkJDAhQCoUNDAjI8Bhg5NEgCEBAaEqAQCB0aEpDhMcDIoUESgIDQkACFQOjQkIAMj8F/AG6LYzjKZeDHAAAAAElFTkSuQmCC">
+  <style>
+/* SYNAPSE: tema oscuro de laboratorio, sin dependencias. */
+:root {
+  --bg: #0b1016;
+  --bg-2: #111821;
+  --panel: #151e29;
+  --panel-2: #1b2633;
+  --line: #263445;
+  --line-2: #33465c;
+  --text: #e6edf3;
+  --muted: #8b9bb0;
+  --accent: #3ee6c4;
+  --accent-ink: #04201a;
+  --accent-soft: rgba(62, 230, 196, 0.12);
+  --left: #5aa9ff;   /* lado izquierdo en gráficas */
+  --right: #ff8a5c;  /* lado derecho en gráficas */
+  --ok: #4ade80;
+  --warn: #fbbf24;
+  --danger: #f87171;
+  --radius: 10px;
+  --mono: ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace;
+  --sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --top-h: 56px;
+  --tab-h: 62px;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.5 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+}
+a { color: var(--accent); }
+h1, h2, h3 { line-height: 1.25; margin: 0 0 .5em; }
+h1 { font-size: 1.45rem; }
+h2 { font-size: 1.05rem; letter-spacing: .01em; }
+p { margin: 0 0 .75em; }
+ul, ol { margin: 0 0 .75em; padding-left: 1.3em; }
+.muted { color: var(--muted); }
+.small { font-size: .85rem; }
+.center { text-align: center; }
+.ok-text { color: var(--ok); }
+.warn-text { color: var(--warn); }
+.ico { display: block; flex: none; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Arranque / error ---------- */
+.boot, .fatal { min-height: 100dvh; display: grid; place-content: center; text-align: center; gap: 8px; padding: 24px; color: var(--muted); }
+.boot img { margin: 0 auto; animation: pulse 1.4s ease-in-out infinite; }
+.fatal h1 { color: var(--danger); }
+@keyframes pulse { 50% { opacity: .45; transform: scale(.94); } }
+
+/* ---------- Estructura ---------- */
+#app {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "top" "main";
+  min-height: 100dvh;
+}
+.topbar {
+  grid-area: top;
+  position: sticky; top: 0; z-index: 20;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "brand . data" "ctx ctx ctx";
+  align-items: center;
+  gap: 8px 12px;
+  padding: calc(8px + env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) 8px max(12px, env(safe-area-inset-left));
+  background: rgba(11, 16, 22, .92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.brand { grid-area: brand; display: flex; align-items: center; gap: 8px; color: var(--text); text-decoration: none; font-weight: 700; letter-spacing: .14em; font-size: .95rem; }
+.top-data { grid-area: data; }
+.ctxbar { grid-area: ctx; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.ctx-item { display: flex; flex-direction: column; min-width: 0; }
+.ctx-k { font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); padding-left: 2px; }
+.ctx-select {
+  width: 100%; min-width: 0;
+  background: var(--panel); color: var(--muted);
+  border: 1px solid var(--line); border-radius: 8px;
+  padding: 6px 8px; font: inherit; font-size: .85rem;
+  text-overflow: ellipsis;
+}
+.ctx-select.set { color: var(--text); border-color: var(--accent); background: var(--accent-soft); }
+
+#view {
+  grid-area: main;
+  width: 100%; max-width: 1100px; margin: 0 auto;
+  padding: 16px max(14px, env(safe-area-inset-right)) calc(var(--tab-h) + 24px + env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
+  outline: none;
+}
+.sidenav { display: none; }
+.tabbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  height: calc(var(--tab-h) + env(safe-area-inset-bottom));
+  padding-bottom: env(safe-area-inset-bottom);
+  background: rgba(17, 24, 33, .96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--line);
+}
+.tab-link { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; color: var(--muted); text-decoration: none; font-size: .68rem; }
+.tab-link.active { color: var(--accent); }
+
+@media (min-width: 900px) {
+  :root { --top-h: 69px; }
+  #app {
+    grid-template-columns: 220px 1fr;
+    grid-template-areas: "top top" "side main";
+  }
+  .topbar { grid-template-columns: auto 1fr auto; grid-template-areas: "brand ctx data"; padding-top: calc(10px + env(safe-area-inset-top)); padding-bottom: 10px; }
+  .ctxbar { max-width: 720px; justify-self: center; width: 100%; }
+  .top-data { display: none; }
+  .sidenav {
+    grid-area: side;
+    display: flex; flex-direction: column; gap: 2px;
+    position: sticky; top: var(--top-h); height: calc(100dvh - var(--top-h));
+    padding: 14px 10px; border-right: 1px solid var(--line); background: var(--bg-2);
+  }
+  .side-link { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; color: var(--muted); text-decoration: none; }
+  .side-link:hover { background: var(--panel); color: var(--text); }
+  .side-link.active { background: var(--accent-soft); color: var(--accent); }
+  .side-spacer { flex: 1; }
+  .tabbar { display: none; }
+  #view { padding: 24px 28px 48px; }
+}
+
+/* ---------- Componentes ---------- */
+.page-head h1 { display: flex; align-items: center; gap: 10px; }
+.page-head h1 span { color: var(--accent); }
+.card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px; margin-bottom: 14px;
+}
+.card > :last-child { margin-bottom: 0; }
+.card.hero { border-color: var(--accent); background: linear-gradient(135deg, var(--accent-soft), transparent 60%), var(--panel); }
+.card.danger-zone { border-color: rgba(248, 113, 113, .35); }
+.card.placeholder .badge { display: inline-block; padding: 3px 10px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); font-size: .8rem; font-weight: 600; }
+.feature-list li { margin-bottom: 4px; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 40px; padding: 8px 14px;
+  background: var(--panel-2); color: var(--text);
+  border: 1px solid var(--line-2); border-radius: 8px;
+  font: inherit; font-weight: 600; font-size: .9rem; text-decoration: none; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:hover { border-color: var(--muted); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn.danger { background: transparent; color: var(--danger); border-color: rgba(248, 113, 113, .6); }
+.btn.danger:hover:not(:disabled) { background: rgba(248, 113, 113, .12); }
+.btn.ghost { background: transparent; border-color: transparent; color: var(--muted); }
+.btn.small { min-height: 32px; padding: 4px 10px; font-size: .82rem; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: .75em; }
+.icon-btn {
+  display: inline-grid; place-items: center; width: 38px; height: 38px;
+  background: transparent; color: var(--muted); border: 1px solid transparent; border-radius: 8px; cursor: pointer;
+}
+.icon-btn:hover { color: var(--text); background: var(--panel-2); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.input {
+  min-height: 40px; padding: 8px 10px; width: 100%;
+  background: var(--bg-2); color: var(--text);
+  border: 1px solid var(--line-2); border-radius: 8px; font: inherit;
+}
+.input.invalid { border-color: var(--danger); }
+input[type="number"].input { font-family: var(--mono); }
+.check { display: flex; align-items: center; gap: 8px; margin-bottom: .75em; cursor: pointer; }
+.check input { width: 18px; height: 18px; accent-color: var(--accent); }
+
+.banner { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: var(--radius); margin-bottom: 14px; }
+.banner > span:nth-child(2) { flex: 1; }
+.banner.warn { background: rgba(251, 191, 36, .1); border: 1px solid rgba(251, 191, 36, .4); color: #fde68a; }
+.note { padding: 8px 12px; border-radius: 8px; font-size: .9rem; }
+.note.warn { background: rgba(251, 191, 36, .1); color: #fde68a; }
+
+.ctx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; margin-bottom: .75em; }
+.ctx-tile { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 8px; background: var(--bg-2); border: 1px solid var(--line); border-left: 3px solid var(--accent); }
+.ctx-tile.empty { border-left-color: var(--line-2); }
+.ctx-tile.empty strong { color: var(--muted); font-weight: 500; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: .75em; }
+.stat { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 10px; align-items: center; padding: 12px; border-radius: 8px; background: var(--bg-2); border: 1px solid var(--line); color: var(--text); text-decoration: none; }
+.stat > span:first-child { grid-row: span 2; color: var(--accent); }
+.stat strong { font: 700 1.35rem var(--mono); }
+.stat span:last-child { color: var(--muted); font-size: .8rem; }
+.stat:hover { border-color: var(--line-2); }
+
+.conv-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; align-items: center; }
+.conv-row select:first-child { grid-column: 1 / -1; }
+.conv-row .icon-btn { justify-self: center; }
+@media (min-width: 640px) { .conv-row { grid-template-columns: 1.4fr 1fr 1fr auto 1fr; } .conv-row select:first-child { grid-column: auto; } }
+@media (max-width: 639px) { .conv-row input { grid-column: 1 / -1; } }
+.conv-out { display: block; font: 700 1.5rem var(--mono); color: var(--accent); margin-bottom: 8px; word-break: break-all; }
+.conv-all { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { padding: 3px 9px; border-radius: 99px; background: var(--bg-2); border: 1px solid var(--line); font: .8rem var(--mono); color: var(--muted); }
+
+.meter { height: 8px; border-radius: 99px; background: var(--bg-2); border: 1px solid var(--line); overflow: hidden; margin-bottom: .75em; }
+.meter span { display: block; height: 100%; background: var(--accent); }
+
+.stages { list-style: none; padding: 0; display: grid; gap: 6px; }
+.stages li { display: flex; align-items: center; gap: 10px; color: var(--muted); }
+.stages li.done { color: var(--text); }
+.stage-n { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line-2); font: 600 .8rem var(--mono); flex: none; }
+.stages li.done .stage-n { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
+/* ---------- Diálogos y avisos ---------- */
+.modal {
+  width: min(520px, calc(100vw - 24px)); max-height: calc(100dvh - 40px);
+  padding: 0; border: 1px solid var(--line-2); border-radius: 14px;
+  background: var(--panel); color: var(--text);
+}
+.modal.wide { width: min(860px, calc(100vw - 24px)); }
+.modal::backdrop { background: rgba(0, 0, 0, .6); }
+.modal-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 6px; }
+.modal-head h2 { margin: 0; }
+.modal-body { padding: 6px 16px 10px; overflow: auto; }
+.modal-foot { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; padding: 10px 16px 16px; }
+
+#toasts {
+  position: fixed; z-index: 100; left: 50%; transform: translateX(-50%);
+  bottom: calc(var(--tab-h) + 12px + env(safe-area-inset-bottom));
+  display: flex; flex-direction: column; gap: 8px; width: min(480px, calc(100vw - 24px));
+}
+@media (min-width: 900px) { #toasts { bottom: 20px; } }
+.toast {
+  display: flex; align-items: center; gap: 10px; padding: 10px 8px 10px 14px;
+  background: var(--panel-2); border: 1px solid var(--line-2); border-left: 4px solid var(--accent); border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .45); animation: toast-in .2s ease-out;
+}
+.toast > span { flex: 1; }
+.toast.ok { border-left-color: var(--ok); }
+.toast.warn { border-left-color: var(--warn); }
+.toast.error { border-left-color: var(--danger); }
+.toast.out { opacity: 0; transform: translateY(6px); transition: .25s; }
+@keyframes toast-in { from { opacity: 0; transform: translateY(8px); } }
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+</style>
+  <script>
+// Versión única de SYNAPSE. Cámbiala en cada publicación:
+// el service worker detecta el cambio y ofrece actualizar la app.
+self.SYNAPSE_VERSION = '0.1.0';
+self.SYNAPSE_SINGLE_FILE = true;
+</script>
   <script>
     // Diagnóstico de arranque: si la app no inicia en 5 s, explica por qué en lugar de quedarse "Cargando".
     (function () {
@@ -42,12 +298,1893 @@
       }, 5000);
     })();
   </script>
-  <script type="module" src="js/app.js"></script>
+  <script type="module">
+const __m = {};
+self.__SYNAPSE_MODULES = __m; // acceso para pruebas automáticas
+/* ---- js/core/schema.js ---- */
+__m['js/core/schema.js'] = (() => {
+// Modelo de datos unificado de SYNAPSE.
+
+const APP = 'SYNAPSE';
+const SCHEMA_VERSION = 1;
+
+/** Colecciones de registros (cada una es un object store con keyPath 'id'). */
+const COLLECTIONS = [
+  'prototypes',
+  'circuits',
+  'pilots',
+  'checklistTemplates',
+  'checklistRuns',
+  'tests',
+  'signalSessions',
+  'calculations',
+];
+
+/** Nombres legibles. */
+const COLLECTION_LABELS = {
+  prototypes: 'Prototipos',
+  circuits: 'Circuitos',
+  pilots: 'Pilotos',
+  checklistTemplates: 'Plantillas de checklist',
+  checklistRuns: 'Checklists ejecutados',
+  tests: 'Registros de bitácora',
+  signalSessions: 'Sesiones de señal',
+  calculations: 'Cálculos guardados',
+};
+
+const PREFIXES = {
+  prototypes: 'pro',
+  circuits: 'cir',
+  pilots: 'pil',
+  checklistTemplates: 'clt',
+  checklistRuns: 'clr',
+  tests: 'tst',
+  signalSessions: 'ses',
+  calculations: 'calc',
+};
+
+/** Store aparte para muestras crudas (keyPath 'sessionId'). */
+const SIGNAL_STORE = 'signalData';
+/** Store clave/valor para ajustes internos (handles, fechas de respaldo...). */
+const KV_STORE = 'kv';
+
+/**
+ * Campos que apuntan a otras entidades.  campo -> colección destino.
+ * Un campo terminado en "Ids" es un array de ids.
+ * 'parentId' apunta a la misma colección del registro.
+ */
+const REF_FIELDS = {
+  prototypeId: 'prototypes',
+  prototypeIds: 'prototypes',
+  circuitId: 'circuits',
+  pilotId: 'pilots',
+  testId: 'tests',
+  sessionIds: 'signalSessions',
+  calcIds: 'calculations',
+  checklistRunId: 'checklistRuns',
+  templateId: 'checklistTemplates',
+  parentId: '__self__',
+};
+
+/** Valores por defecto de cada entidad (se mezclan al crear). */
+const DEFAULTS = {
+  prototypes: () => ({
+    code: 'v1.0', parentId: null, name: '', deviceType: 'exoesqueleto',
+    joint: 'rodilla', side: 'R', status: 'diseño', changelog: '',
+    limits: { romMinDeg: null, romMaxDeg: null, maxTorqueNm: null },
+  }),
+  circuits: () => ({
+    name: '', rev: 'Rev A', parentId: null, prototypeIds: [], mcu: '',
+    pinout: [], connections: [], changes: '', status: 'diseño',
+  }),
+  pilots: () => ({
+    code: '', consentConfirmed: false,
+    profile: { ageRange: '', laterality: '', massKg: null, heightCm: null },
+    anthropometrics: {}, fittings: [], baseline: [], observations: [],
+  }),
+  checklistTemplates: () => ({ name: '', items: [] }),
+  checklistRuns: () => ({
+    templateId: null, prototypeId: null, circuitId: null, pilotId: null,
+    date: new Date().toISOString(), operator: '', items: [], passed: false,
+  }),
+  tests: () => ({
+    date: new Date().toISOString(), type: 'experimento', title: '', description: '',
+    prototypeId: null, circuitId: null, pilotId: null, checklistRunId: null,
+    sessionIds: [], calcIds: [], params: {}, result: '', failure: null, tags: [],
+  }),
+  signalSessions: () => ({
+    testId: null, pilotId: null, prototypeId: null, circuitId: null,
+    source: 'sim', sampleRateHz: null, durationS: 0, channels: [], markers: [],
+    processing: {}, stats: {}, symmetry: {}, notes: '',
+  }),
+  calculations: () => ({
+    type: '', inputs: {}, outputs: {}, prototypeId: null, testId: null, note: '',
+  }),
+};
+
+/** Etiqueta corta para mostrar un registro en listas y selectores. */
+function labelOf(collection, r) {
+  if (!r) return '—';
+  switch (collection) {
+    case 'prototypes': return [r.code, r.name].filter(Boolean).join(' · ') || r.id;
+    case 'circuits': return [r.name, r.rev].filter(Boolean).join(' · ') || r.id;
+    case 'pilots': return r.code || r.id;
+    case 'tests': return r.title || r.type || r.id;
+    case 'checklistTemplates': return r.name || r.id;
+    default: return r.title || r.name || r.code || r.id;
+  }
+}
+
+/**
+ * Migraciones del formato de respaldo.  MIGRATIONS[n] convierte de la versión n a la n+1.
+ * Recibe y devuelve el objeto completo { meta, data, signalData }.
+ */
+const MIGRATIONS = {
+  // 1: (b) => { ...; b.meta.schemaVersion = 2; return b; },
+};
+
+function migrate(backup) {
+  let v = backup?.meta?.schemaVersion ?? 1;
+  while (v < SCHEMA_VERSION) {
+    const fn = MIGRATIONS[v];
+    if (!fn) throw new Error(`No hay migración desde la versión de esquema ${v}.`);
+    backup = fn(backup);
+    v = backup.meta.schemaVersion;
+  }
+  return backup;
+}
+
+return { APP, SCHEMA_VERSION, COLLECTIONS, COLLECTION_LABELS, PREFIXES, SIGNAL_STORE, KV_STORE, REF_FIELDS, DEFAULTS, labelOf, MIGRATIONS, migrate };
+})();
+/* ---- js/core/db.js ---- */
+__m['js/core/db.js'] = (() => {
+// Envoltura mínima de IndexedDB basada en promesas.
+const { COLLECTIONS, SIGNAL_STORE, KV_STORE } = __m['js/core/schema.js'];
+const DB_NAME = 'synapse';
+const DB_VERSION = 1;
+let dbPromise = null;
+
+function openDB() {
+  if (dbPromise) return dbPromise;
+  dbPromise = new Promise((resolve, reject) => {
+    if (!('indexedDB' in self)) {
+      reject(new Error('Este navegador no tiene IndexedDB (¿modo privado?). SYNAPSE no puede guardar datos.'));
+      return;
+    }
+    const req = indexedDB.open(DB_NAME, DB_VERSION);
+    req.onupgradeneeded = () => {
+      const db = req.result;
+      for (const c of COLLECTIONS) {
+        if (!db.objectStoreNames.contains(c)) db.createObjectStore(c, { keyPath: 'id' });
+      }
+      if (!db.objectStoreNames.contains(SIGNAL_STORE)) db.createObjectStore(SIGNAL_STORE, { keyPath: 'sessionId' });
+      if (!db.objectStoreNames.contains(KV_STORE)) db.createObjectStore(KV_STORE);
+    };
+    req.onsuccess = () => {
+      const db = req.result;
+      // Si otra pestaña actualiza la base, cerramos para no bloquearla.
+      db.onversionchange = () => { db.close(); dbPromise = null; };
+      resolve(db);
+    };
+    req.onerror = () => reject(req.error);
+    req.onblocked = () => reject(new Error('Cierra otras pestañas de SYNAPSE para actualizar la base de datos.'));
+  });
+  return dbPromise;
+}
+
+/**
+ * Ejecuta fn(tx) dentro de una transacción y resuelve al completarse.
+ * Si fn devuelve un IDBRequest, se resuelve con su resultado.
+ */
+async function run(storeNames, mode, fn) {
+  const db = await openDB();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(storeNames, mode);
+    let result;
+    tx.oncomplete = () => resolve(result);
+    tx.onerror = () => reject(tx.error);
+    tx.onabort = () => reject(tx.error || new Error('Transacción cancelada'));
+    const r = fn(tx);
+    if (r && typeof r === 'object' && 'onsuccess' in r) r.onsuccess = () => { result = r.result; };
+    else result = r;
+  });
+}
+
+const getAll = (store) => run(store, 'readonly', (tx) => tx.objectStore(store).getAll());
+const get = (store, key) => run(store, 'readonly', (tx) => tx.objectStore(store).get(key));
+const put = (store, value, key) =>
+  run(store, 'readwrite', (tx) => (key === undefined ? tx.objectStore(store).put(value) : tx.objectStore(store).put(value, key)));
+const del = (store, key) => run(store, 'readwrite', (tx) => tx.objectStore(store).delete(key));
+const clearStore = (store) => run(store, 'readwrite', (tx) => tx.objectStore(store).clear());
+const count = (store) => run(store, 'readonly', (tx) => tx.objectStore(store).count());
+
+function putMany(store, values) {
+  return run(store, 'readwrite', (tx) => {
+    const os = tx.objectStore(store);
+    for (const v of values) os.put(v);
+  });
+}
+
+function delMany(store, keys) {
+  return run(store, 'readwrite', (tx) => {
+    const os = tx.objectStore(store);
+    for (const k of keys) os.delete(k);
+  });
+}
+
+/** Reemplaza el contenido de varios stores en una sola transacción atómica. */
+function replaceStores(contents) {
+  const names = Object.keys(contents);
+  return run(names, 'readwrite', (tx) => {
+    for (const name of names) {
+      const os = tx.objectStore(name);
+      os.clear();
+      for (const v of contents[name]) os.put(v);
+    }
+  });
+}
+
+async function kvGet(key, fallback = null) {
+  const v = await get(KV_STORE, key);
+  return v === undefined ? fallback : v;
+}
+const kvSet = (key, value) => put(KV_STORE, value, key);
+const kvDel = (key) => del(KV_STORE, key);
+
+return { openDB, getAll, get, put, del, clearStore, count, putMany, delMany, replaceStores, kvGet, kvSet, kvDel };
+})();
+/* ---- js/core/ids.js ---- */
+__m['js/core/ids.js'] = (() => {
+const { PREFIXES } = __m['js/core/schema.js'];
+/** Id corto con prefijo por colección, p. ej. "pro_3f9a1c2e". */
+function newId(collection) {
+  const prefix = PREFIXES[collection] || 'id';
+  const bytes = new Uint8Array(5);
+  crypto.getRandomValues(bytes);
+  const hex = [...bytes].map((b) => b.toString(16).padStart(2, '0')).join('');
+  return `${prefix}_${hex}`;
+}
+
+const nowISO = () => new Date().toISOString();
+
+return { newId, nowISO };
+})();
+/* ---- js/core/store.js ---- */
+__m['js/core/store.js'] = (() => {
+// Almacén de registros: caché en memoria + escritura en IndexedDB + eventos.
+const { COLLECTIONS, DEFAULTS, REF_FIELDS, SIGNAL_STORE, labelOf } = __m['js/core/schema.js'];
+const db = __m['js/core/db.js'];
+const { newId, nowISO } = __m['js/core/ids.js'];
+const cache = Object.fromEntries(COLLECTIONS.map((c) => [c, new Map()]));
+const listeners = new Set();
+
+async function initStore() {
+  for (const c of COLLECTIONS) {
+    const rows = await db.getAll(c);
+    cache[c] = new Map(rows.map((r) => [r.id, r]));
+  }
+}
+
+/** Suscribirse a cambios. Devuelve función para cancelar. */
+function onChange(fn) {
+  listeners.add(fn);
+  return () => listeners.delete(fn);
+}
+function emit(evt) {
+  for (const fn of listeners) {
+    try { fn(evt); } catch (e) { console.error(e); }
+  }
+}
+
+const clone = (o) => (typeof structuredClone === 'function' ? structuredClone(o) : JSON.parse(JSON.stringify(o)));
+
+function get(c, id) {
+  const r = cache[c]?.get(id);
+  return r ? clone(r) : null;
+}
+function exists(c, id) {
+  return !!id && cache[c]?.has(id);
+}
+
+/** Lista registros (copias). Orden: más reciente primero. */
+function list(c, filter) {
+  let rows = [...(cache[c]?.values() || [])];
+  if (filter) rows = rows.filter(filter);
+  rows.sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
+  return rows.map(clone);
+}
+
+function counts() {
+  return Object.fromEntries(COLLECTIONS.map((c) => [c, cache[c].size]));
+}
+function totalRecords() {
+  return COLLECTIONS.reduce((n, c) => n + cache[c].size, 0);
+}
+
+async function create(c, data = {}) {
+  const now = nowISO();
+  const obj = { ...DEFAULTS[c](), ...clone(data), id: data.id || newId(c), createdAt: now, updatedAt: now };
+  await db.put(c, obj);
+  cache[c].set(obj.id, obj);
+  emit({ type: 'create', collection: c, id: obj.id });
+  return clone(obj);
+}
+
+async function update(c, id, patch) {
+  const cur = cache[c].get(id);
+  if (!cur) throw new Error(`No existe ${id} en ${c}`);
+  const obj = { ...cur, ...clone(patch), id, createdAt: cur.createdAt, updatedAt: nowISO() };
+  await db.put(c, obj);
+  cache[c].set(id, obj);
+  emit({ type: 'update', collection: c, id });
+  return clone(obj);
+}
+
+async function remove(c, id) {
+  await db.del(c, id);
+  cache[c].delete(id);
+  if (c === 'signalSessions') await db.del(SIGNAL_STORE, id);
+  emit({ type: 'remove', collection: c, id });
+}
+
+/** Elimina varios registros (por colección) en lote. */
+async function removeMany(byCollection) {
+  for (const [c, ids] of Object.entries(byCollection)) {
+    if (!ids.length) continue;
+    await db.delMany(c, ids);
+    ids.forEach((id) => cache[c].delete(id));
+    if (c === 'signalSessions') await db.delMany(SIGNAL_STORE, ids);
+  }
+  emit({ type: 'bulk' });
+}
+
+/**
+ * Escribe registros tal cual (conservando createdAt/updatedAt).
+ * Usado por la importación con fusión.
+ */
+async function putRaw(c, rows) {
+  if (!rows.length) return;
+  await db.putMany(c, rows);
+  rows.forEach((r) => cache[c].set(r.id, clone(r)));
+}
+
+/** Reemplaza todos los datos (importación "reemplazar todo" o borrado total). */
+async function replaceAll(data, signalData = []) {
+  const contents = {};
+  for (const c of COLLECTIONS) contents[c] = data[c] || [];
+  contents[SIGNAL_STORE] = signalData;
+  await db.replaceStores(contents);
+  for (const c of COLLECTIONS) cache[c] = new Map(contents[c].map((r) => [r.id, clone(r)]));
+  emit({ type: 'bulk' });
+}
+
+function notifyBulk() { emit({ type: 'bulk' }); }
+
+/** Busca qué registros apuntan a (c, id). Útil antes de borrar. */
+function findReferences(c, id) {
+  const refs = [];
+  for (const other of COLLECTIONS) {
+    for (const r of cache[other].values()) {
+      for (const [field, target] of Object.entries(REF_FIELDS)) {
+        const t = target === '__self__' ? other : target;
+        if (t !== c || !(field in r)) continue;
+        const v = r[field];
+        if (Array.isArray(v) ? v.includes(id) : v === id) {
+          refs.push({ collection: other, id: r.id, field, label: labelOf(other, r) });
+        }
+      }
+    }
+  }
+  return refs;
+}
+
+/** Muestras crudas de una sesión. */
+const getSignalData = (sessionId) => db.get(SIGNAL_STORE, sessionId);
+const putSignalData = (record) => db.put(SIGNAL_STORE, record);
+const getAllSignalData = () => db.getAll(SIGNAL_STORE);
+
+return { initStore, onChange, get, exists, list, counts, totalRecords, create, update, remove, removeMany, putRaw, replaceAll, notifyBulk, findReferences, getSignalData, putSignalData, getAllSignalData };
+})();
+/* ---- js/core/context.js ---- */
+__m['js/core/context.js'] = (() => {
+// Contexto activo: Piloto · Prototipo · Rev de circuito.
+// Se guarda en localStorage (ligero) y pre-llena los registros nuevos.
+const { exists, onChange } = __m['js/core/store.js'];
+const KEY = 'synapse.context';
+const FIELDS = { pilotId: 'pilots', prototypeId: 'prototypes', circuitId: 'circuits' };
+const listeners = new Set();
+
+let ctx = load();
+
+function load() {
+  try {
+    const raw = localStorage.getItem(KEY);
+    const v = raw ? JSON.parse(raw) : {};
+    return { pilotId: v.pilotId || null, prototypeId: v.prototypeId || null, circuitId: v.circuitId || null };
+  } catch {
+    return { pilotId: null, prototypeId: null, circuitId: null };
+  }
+}
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(ctx)); } catch { /* almacenamiento no disponible */ }
+}
+
+function getContext() {
+  return { ...ctx };
+}
+
+function setContext(patch) {
+  const next = { ...ctx };
+  for (const [k, v] of Object.entries(patch)) {
+    if (!(k in FIELDS)) continue;
+    next[k] = v && exists(FIELDS[k], v) ? v : null;
+  }
+  if (next.pilotId === ctx.pilotId && next.prototypeId === ctx.prototypeId && next.circuitId === ctx.circuitId) return;
+  ctx = next;
+  save();
+  for (const fn of listeners) fn(getContext());
+}
+
+function onContext(fn) {
+  listeners.add(fn);
+  return () => listeners.delete(fn);
+}
+
+/** Quita del contexto ids que ya no existen (tras borrar o importar). */
+function sanitizeContext() {
+  const patch = {};
+  let changed = false;
+  for (const [k, c] of Object.entries(FIELDS)) {
+    if (ctx[k] && !exists(c, ctx[k])) { patch[k] = null; changed = true; }
+  }
+  if (changed) setContext(patch);
+}
+
+/** Valores para pre-llenar un registro nuevo. */
+function contextDefaults() {
+  sanitizeContext();
+  return { ...ctx };
+}
+
+onChange((evt) => {
+  if (evt.type === 'remove' || evt.type === 'bulk') sanitizeContext();
+});
+
+return { getContext, setContext, onContext, sanitizeContext, contextDefaults };
+})();
+/* ---- js/ui/dom.js ---- */
+__m['js/ui/dom.js'] = (() => {
+// Utilidades mínimas de DOM (sin dependencias).
+
+/**
+ * Crea un elemento.  h('div', {class: 'x', onclick: fn}, 'texto', otroNodo)
+ * - class / style (string u objeto) / dataset (objeto)
+ * - on<evento>: función
+ * - value, checked, disabled, selected, hidden: se asignan como propiedad
+ * - null / false / undefined en hijos se ignoran; arrays se aplanan
+ */
+function h(tag, attrs, ...children) {
+  const el = document.createElement(tag);
+  if (attrs && (typeof attrs !== 'object' || attrs instanceof Node || Array.isArray(attrs))) {
+    children.unshift(attrs);
+    attrs = null;
+  }
+  if (attrs) {
+    for (const [k, v] of Object.entries(attrs)) {
+      if (v === null || v === undefined || v === false) continue;
+      if (k === 'class') el.className = v;
+      else if (k === 'style' && typeof v === 'object') Object.assign(el.style, v);
+      else if (k === 'dataset') Object.assign(el.dataset, v);
+      else if (k.startsWith('on') && typeof v === 'function') el.addEventListener(k.slice(2), v);
+      else if (['value', 'checked', 'disabled', 'selected', 'hidden', 'multiple'].includes(k)) el[k] = v;
+      else if (k === 'html') el.innerHTML = v; // solo para SVG/markup propio, nunca para datos del usuario
+      else el.setAttribute(k, v === true ? '' : String(v));
+    }
+  }
+  append(el, children);
+  return el;
+}
+
+function append(el, children) {
+  for (const c of children) {
+    if (c === null || c === undefined || c === false) continue;
+    if (Array.isArray(c)) append(el, c);
+    else el.append(c instanceof Node ? c : document.createTextNode(String(c)));
+  }
+}
+
+const $ = (sel, root = document) => root.querySelector(sel);
+const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+
+function clear(el) {
+  while (el.firstChild) el.firstChild.remove();
+  return el;
+}
+
+/** Formatea fecha ISO a texto local corto. */
+function fmtDate(iso, withTime = true) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return '—';
+  const opts = withTime
+    ? { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }
+    : { year: 'numeric', month: '2-digit', day: '2-digit' };
+  return d.toLocaleString('es-EC', opts);
+}
+
+function fmtBytes(n) {
+  if (!Number.isFinite(n)) return '—';
+  const u = ['B', 'KB', 'MB', 'GB'];
+  let i = 0;
+  while (n >= 1024 && i < u.length - 1) { n /= 1024; i++; }
+  return `${n.toFixed(i ? 1 : 0)} ${u[i]}`;
+}
+
+function debounce(fn, ms) {
+  let t;
+  const d = (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); };
+  d.flush = (...a) => { clearTimeout(t); return fn(...a); };
+  d.cancel = () => clearTimeout(t);
+  return d;
+}
+
+return { h, $, $$, clear, fmtDate, fmtBytes, debounce };
+})();
+/* ---- js/core/backup.js ---- */
+__m['js/core/backup.js'] = (() => {
+// Respaldo: exportar, importar (reemplazar / fusionar), compartir y auto-respaldo a carpeta.
+const { APP, SCHEMA_VERSION, COLLECTIONS, COLLECTION_LABELS, migrate } = __m['js/core/schema.js'];
+const store = __m['js/core/store.js'];
+const { kvGet, kvSet, kvDel } = __m['js/core/db.js'];
+const { debounce } = __m['js/ui/dom.js'];
+// ---------- Serialización ----------
+
+/** Convierte un registro de muestras (con TypedArrays) a JSON plano. */
+function signalToJSON(rec) {
+  const columns = {};
+  for (const [k, v] of Object.entries(rec.columns || {})) columns[k] = Array.from(v);
+  return { ...rec, columns };
+}
+/** Inverso: arrays planos a Float64Array para 't' y Float32Array para canales. */
+function signalFromJSON(rec) {
+  const columns = {};
+  for (const [k, v] of Object.entries(rec.columns || {})) {
+    columns[k] = k === 't' ? Float64Array.from(v) : Float32Array.from(v);
+  }
+  return { ...rec, columns };
+}
+
+async function buildBackup({ includeSignals = true } = {}) {
+  const data = {};
+  for (const c of COLLECTIONS) data[c] = store.list(c);
+  const signalData = includeSignals ? (await store.getAllSignalData()).map(signalToJSON) : [];
+  return {
+    meta: {
+      app: APP,
+      schemaVersion: SCHEMA_VERSION,
+      appVersion: self.SYNAPSE_VERSION || 'dev',
+      exportedAt: new Date().toISOString(),
+      includesSignals: includeSignals,
+      counts: store.counts(),
+    },
+    data,
+    signalData,
+  };
+}
+
+function backupFilename(prefix = 'synapse-respaldo', d = new Date()) {
+  const p = (n) => String(n).padStart(2, '0');
+  return `${prefix}-${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}-${p(d.getHours())}${p(d.getMinutes())}.json`;
+}
+
+// ---------- Validación ----------
+
+function validateBackup(obj) {
+  if (!obj || typeof obj !== 'object') throw new Error('El archivo no contiene un objeto JSON.');
+  if (obj.meta?.app !== APP) throw new Error('El archivo no es un respaldo de SYNAPSE.');
+  const v = obj.meta.schemaVersion;
+  if (!Number.isInteger(v) || v < 1) throw new Error('Versión de esquema inválida.');
+  if (v > SCHEMA_VERSION) throw new Error(`El respaldo es de una versión más nueva de SYNAPSE (esquema ${v}). Actualiza la app.`);
+  if (!obj.data || typeof obj.data !== 'object') throw new Error('El respaldo no tiene la sección "data".');
+  for (const c of COLLECTIONS) {
+    const rows = obj.data[c] ?? [];
+    if (!Array.isArray(rows)) throw new Error(`"${c}" debe ser una lista.`);
+    for (const r of rows) {
+      if (!r || typeof r.id !== 'string' || !r.id) throw new Error(`Hay un registro sin id en "${c}".`);
+    }
+  }
+  if (obj.signalData && !Array.isArray(obj.signalData)) throw new Error('"signalData" debe ser una lista.');
+  return migrate(obj);
+}
+
+/** Resumen de lo que trae un respaldo (para mostrar antes de importar). */
+function summarize(obj) {
+  return {
+    exportedAt: obj.meta.exportedAt,
+    appVersion: obj.meta.appVersion,
+    counts: Object.fromEntries(COLLECTIONS.map((c) => [c, (obj.data[c] || []).length])),
+    signals: (obj.signalData || []).length,
+  };
+}
+
+// ---------- Importación ----------
+
+async function importReplace(obj) {
+  const b = validateBackup(obj);
+  const data = {};
+  for (const c of COLLECTIONS) data[c] = b.data[c] || [];
+  await store.replaceAll(data, (b.signalData || []).map(signalFromJSON));
+  return summarize(b);
+}
+
+/**
+ * Fusiona por id. Regla: gana el registro con updatedAt más reciente.
+ * Devuelve { [colección]: { added, updated, kept } , signals }.
+ */
+async function importMerge(obj) {
+  const b = validateBackup(obj);
+  const report = {};
+  const touchedSessions = new Set();
+  for (const c of COLLECTIONS) {
+    const rows = b.data[c] || [];
+    const toWrite = [];
+    const r = { added: 0, updated: 0, kept: 0 };
+    for (const inc of rows) {
+      const cur = store.get(c, inc.id);
+      if (!cur) { toWrite.push(inc); r.added++; }
+      else if ((inc.updatedAt || '') > (cur.updatedAt || '')) { toWrite.push(inc); r.updated++; }
+      else r.kept++;
+      if (c === 'signalSessions' && toWrite.at(-1) === inc) touchedSessions.add(inc.id);
+    }
+    await store.putRaw(c, toWrite);
+    report[c] = r;
+  }
+  let signals = 0;
+  for (const s of b.signalData || []) {
+    const local = await store.getSignalData(s.sessionId);
+    if (touchedSessions.has(s.sessionId) || !local) {
+      await store.putSignalData(signalFromJSON(s));
+      signals++;
+    }
+  }
+  report.signals = signals;
+  store.notifyBulk();
+  return report;
+}
+
+function describeMergeReport(rep) {
+  const parts = [];
+  for (const c of COLLECTIONS) {
+    const r = rep[c];
+    if (!r || (!r.added && !r.updated)) continue;
+    parts.push(`${COLLECTION_LABELS[c]}: +${r.added} nuevos, ${r.updated} actualizados`);
+  }
+  if (rep.signals) parts.push(`Señales: ${rep.signals} sesiones`);
+  return parts.length ? parts.join(' · ') : 'No había nada nuevo que importar.';
+}
+
+// ---------- Descarga / compartir ----------
+
+function downloadText(text, filename, mime = 'application/json') {
+  const blob = new Blob([text], { type: `${mime};charset=utf-8` });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+
+async function exportDownload(opts) {
+  const b = await buildBackup(opts);
+  downloadText(JSON.stringify(b), backupFilename());
+  await markBackup('descarga');
+  return b;
+}
+
+function canShareFiles() {
+  try {
+    const f = new File(['{}'], 'x.json', { type: 'application/json' });
+    return !!(navigator.canShare && navigator.canShare({ files: [f] }));
+  } catch { return false; }
+}
+
+/** Comparte el respaldo (móvil: Drive, Archivos, correo…). */
+async function exportShare(opts) {
+  const b = await buildBackup(opts);
+  const file = new File([JSON.stringify(b)], backupFilename(), { type: 'application/json' });
+  await navigator.share({ files: [file], title: 'Respaldo SYNAPSE' });
+  await markBackup('compartir');
+}
+
+// ---------- Registro de respaldos ----------
+
+async function markBackup(method) {
+  await kvSet('lastBackup', { at: new Date().toISOString(), method });
+}
+const lastBackup = () => kvGet('lastBackup', null);
+
+/** true si hay datos y el último respaldo tiene más de `days` días (o nunca hubo). */
+async function backupOverdue(days = 7) {
+  if (store.totalRecords() === 0) return false;
+  const lb = await lastBackup();
+  if (!lb) return true;
+  return Date.now() - new Date(lb.at).getTime() > days * 86400e3;
+}
+
+// ---------- Auto-respaldo en carpeta (File System Access API) ----------
+
+const autoBackupSupported = () => typeof window !== 'undefined' && 'showDirectoryPicker' in window;
+
+async function chooseAutoBackupFolder() {
+  const handle = await window.showDirectoryPicker({ id: 'synapse-respaldo', mode: 'readwrite' });
+  await kvSet('autoBackupDir', handle);
+  await writeAutoBackup();
+  return handle;
+}
+
+async function disableAutoBackup() {
+  await kvDel('autoBackupDir');
+}
+
+async function permissionOf(handle, request) {
+  const opts = { mode: 'readwrite' };
+  if ((await handle.queryPermission(opts)) === 'granted') return 'granted';
+  if (request) return handle.requestPermission(opts);
+  return handle.queryPermission(opts);
+}
+
+async function autoBackupStatus() {
+  if (!autoBackupSupported()) return { supported: false };
+  const handle = await kvGet('autoBackupDir', null);
+  if (!handle) return { supported: true, configured: false };
+  let permission = 'prompt';
+  try { permission = await permissionOf(handle, false); } catch { permission = 'denied'; }
+  const lb = await lastBackup();
+  return { supported: true, configured: true, folder: handle.name, permission, last: lb };
+}
+
+/** Pide de nuevo permiso a la carpeta (requiere un clic del usuario). */
+async function regrantAutoBackup() {
+  const handle = await kvGet('autoBackupDir', null);
+  if (!handle) return 'none';
+  return permissionOf(handle, true);
+}
+
+/**
+ * Escribe dos archivos: uno rotativo (synapse-auto.json) y uno diario
+ * (synapse-AAAA-MM-DD.json, se sobrescribe durante el día).
+ * Devuelve false si no hay carpeta o no hay permiso.
+ */
+async function writeAutoBackup() {
+  const handle = await kvGet('autoBackupDir', null);
+  if (!handle) return false;
+  if ((await permissionOf(handle, false)) !== 'granted') return false;
+  const json = JSON.stringify(await buildBackup({ includeSignals: true }));
+  const d = new Date();
+  const p = (n) => String(n).padStart(2, '0');
+  const daily = `synapse-${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}.json`;
+  for (const name of ['synapse-auto.json', daily]) {
+    const fh = await handle.getFileHandle(name, { create: true });
+    const w = await fh.createWritable();
+    await w.write(json);
+    await w.close();
+  }
+  await markBackup('auto');
+  return true;
+}
+
+let autoStarted = false;
+/** Activa el auto-respaldo: 20 s después del último cambio y al ocultar la app. */
+function startAutoBackup(onResult) {
+  if (autoStarted || !autoBackupSupported()) return;
+  autoStarted = true;
+  let pending = false;
+  const run = async () => {
+    if (!pending) return;
+    try {
+      const ok = await writeAutoBackup();
+      if (ok) pending = false;
+      onResult?.(ok);
+    } catch (e) {
+      console.warn('Auto-respaldo falló', e);
+      onResult?.(false, e);
+    }
+  };
+  const later = debounce(run, 20000);
+  store.onChange(() => { pending = true; later(); });
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden' && pending) later.flush();
+  });
+}
+
+return { signalFromJSON, buildBackup, backupFilename, validateBackup, summarize, importReplace, importMerge, describeMergeReport, downloadText, exportDownload, canShareFiles, exportShare, markBackup, lastBackup, backupOverdue, autoBackupSupported, chooseAutoBackupFolder, disableAutoBackup, autoBackupStatus, regrantAutoBackup, writeAutoBackup, startAutoBackup };
+})();
+/* ---- js/core/storage.js ---- */
+__m['js/core/storage.js'] = (() => {
+// Estado del almacenamiento del navegador y persistencia.
+
+async function storageInfo() {
+  const info = { usage: null, quota: null, persisted: null, persistSupported: !!navigator.storage?.persist };
+  try {
+    if (navigator.storage?.estimate) {
+      const e = await navigator.storage.estimate();
+      info.usage = e.usage;
+      info.quota = e.quota;
+    }
+    if (navigator.storage?.persisted) info.persisted = await navigator.storage.persisted();
+  } catch { /* no disponible */ }
+  return info;
+}
+
+/** Pide almacenamiento persistente (el navegador no borrará los datos por falta de espacio). */
+async function requestPersist() {
+  try {
+    if (!navigator.storage?.persist) return false;
+    if (await navigator.storage.persisted()) return true;
+    return await navigator.storage.persist();
+  } catch { return false; }
+}
+
+const isStandalone = () =>
+  window.matchMedia?.('(display-mode: standalone)').matches || window.navigator.standalone === true;
+
+const isIOS = () =>
+  /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+const isAndroid = () => /android/i.test(navigator.userAgent);
+
+return { storageInfo, requestPersist, isStandalone, isIOS, isAndroid };
+})();
+/* ---- js/core/install.js ---- */
+__m['js/core/install.js'] = (() => {
+// Instalación como PWA (Android / escritorio Chrome-Edge). En iOS se instala desde Compartir → Agregar a inicio.
+let deferred = null;
+const listeners = new Set();
+
+function initInstall() {
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferred = e;
+    listeners.forEach((fn) => fn(true));
+  });
+  window.addEventListener('appinstalled', () => {
+    deferred = null;
+    listeners.forEach((fn) => fn(false));
+  });
+}
+
+const canPromptInstall = () => !!deferred;
+function onInstallAvailability(fn) { listeners.add(fn); return () => listeners.delete(fn); }
+
+async function promptInstall() {
+  if (!deferred) return false;
+  deferred.prompt();
+  const { outcome } = await deferred.userChoice;
+  deferred = null;
+  return outcome === 'accepted';
+}
+
+return { initInstall, canPromptInstall, onInstallAvailability, promptInstall };
+})();
+/* ---- js/ui/icons.js ---- */
+__m['js/ui/icons.js'] = (() => {
+// Iconos SVG en línea (trazo, 24×24). Solo markup propio.
+const P = {
+  home: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+  signals: '<path d="M2 12h3l2-6 3 12 3-9 2 3h7"/>',
+  logbook: '<path d="M5 3h11l3 3v15H5z"/><path d="M9 8h6M9 12h6M9 16h4"/>',
+  torque: '<circle cx="12" cy="12" r="3"/><path d="M12 3a9 9 0 0 1 9 9"/><path d="M21 12l-2.5-2M21 12l2-2.6"/><path d="M3 12h6"/>',
+  circuits: '<rect x="7" y="7" width="10" height="10" rx="1"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/>',
+  pilots: '<circle cx="12" cy="8" r="3.5"/><path d="M5 21c0-4 3-6.5 7-6.5s7 2.5 7 6.5"/>',
+  data: '<ellipse cx="12" cy="5.5" rx="7.5" ry="2.5"/><path d="M4.5 5.5v13c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5v-13"/><path d="M4.5 12c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5"/>',
+  download: '<path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 19h16"/>',
+  upload: '<path d="M12 15V3M7 8l5-5 5 5"/><path d="M4 19h16"/>',
+  share: '<circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/>',
+  folder: '<path d="M3 6h6l2 2h10v11H3z"/>',
+  x: '<path d="M6 6l12 12M18 6L6 18"/>',
+  check: '<path d="M4 12l5 5L20 6"/>',
+  alert: '<path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/>',
+  link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  trash: '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>',
+  swap: '<path d="M4 8h14l-3-3M20 16H6l3 3"/>',
+};
+
+function icon(name, size = 20) {
+  return `<svg class="ico" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[name] || ''}</svg>`;
+}
+
+return { icon };
+})();
+/* ---- js/ui/shell.js ---- */
+__m['js/ui/shell.js'] = (() => {
+// Estructura de la app: barra superior con contexto activo, navegación y router por hash.
+const { h, $, clear } = __m['js/ui/dom.js'];
+const { icon } = __m['js/ui/icons.js'];
+const store = __m['js/core/store.js'];
+const { labelOf } = __m['js/core/schema.js'];
+const { getContext, setContext, onContext } = __m['js/core/context.js'];
+let routes = [];
+let current = null; // { id, cleanup }
+let view;
+
+function startShell(routeList) {
+  routes = routeList;
+  const app = $('#app');
+  clear(app);
+
+  const navLinks = (cls) => routes.filter((r) => !r.hidden).map((r) =>
+    h('a', { class: `${cls}-link`, href: `#/${r.id}`, dataset: { route: r.id } },
+      h('span', { html: icon(r.icon, cls === 'tab' ? 22 : 20) }),
+      h('span', { class: `${cls}-label` }, cls === 'tab' ? (r.short || r.label) : r.label)));
+
+  view = h('main', { id: 'view', tabindex: '-1' });
+  app.append(
+    h('header', { class: 'topbar' },
+      h('a', { class: 'brand', href: '#/inicio', 'aria-label': 'SYNAPSE inicio' },
+        h('img', { src: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0iIzBiMTAxNiIvPjxnIHN0cm9rZT0iIzNlZTZjNCIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMjU2IDI2MiBMMTM4IDE0OCIvPjxwYXRoIGQ9Ik0yNTYgMjYyIEwzODIgMTU4Ii8+PHBhdGggZD0iTTI1NiAyNjIgTDI1NiA0MDQiLz48L2c+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjYyIiByPSI2MCIgZmlsbD0iIzNlZTZjNCIvPjxjaXJjbGUgY3g9IjEzOCIgY3k9IjE0OCIgcj0iMzIiIGZpbGw9IiM1YWE5ZmYiLz48Y2lyY2xlIGN4PSIzODIiIGN5PSIxNTgiIHI9IjMyIiBmaWxsPSIjZmY4YTVjIi8+PGNpcmNsZSBjeD0iMjU2IiBjeT0iNDA0IiByPSIzMiIgZmlsbD0iIzNlZTZjNCIvPjwvc3ZnPg==', alt: '', width: 28, height: 28 }),
+        h('span', null, 'SYNAPSE')),
+      h('div', { id: 'ctxbar', class: 'ctxbar' }),
+      h('a', { class: 'icon-btn top-data', href: '#/datos', title: 'Datos y respaldo', 'aria-label': 'Datos y respaldo', html: icon('data') })),
+    h('nav', { class: 'sidenav', 'aria-label': 'Módulos' }, navLinks('side'),
+      h('div', { class: 'side-spacer' }),
+      h('a', { class: 'side-link', href: '#/datos', dataset: { route: 'datos' } },
+        h('span', { html: icon('data') }), h('span', { class: 'side-label' }, 'Datos y respaldo'))),
+    view,
+    h('nav', { class: 'tabbar', 'aria-label': 'Módulos' }, navLinks('tab')),
+  );
+
+  renderContextBar();
+  onContext(renderContextBar);
+  store.onChange(() => renderContextBar());
+  window.addEventListener('hashchange', route);
+  route();
+}
+
+function navigate(id) {
+  location.hash = `#/${id}`;
+}
+
+function route() {
+  const [, id = 'inicio', ...rest] = location.hash.split('/');
+  const r = routes.find((x) => x.id === id) || routes[0];
+  if (current?.cleanup) { try { current.cleanup(); } catch (e) { console.error(e); } }
+  clear(view);
+  document.querySelectorAll('[data-route]').forEach((a) => a.classList.toggle('active', a.dataset.route === r.id));
+  document.title = `${r.label} · SYNAPSE`;
+  const cleanup = r.module.render(view, { params: rest.map(decodeURIComponent) });
+  current = { id: r.id, cleanup: typeof cleanup === 'function' ? cleanup : null };
+  view.scrollTop = 0;
+  window.scrollTo(0, 0);
+}
+
+/** Vuelve a dibujar la vista actual (tras importar, por ejemplo). */
+function rerender() { route(); }
+
+// ---------- Barra de contexto activo ----------
+
+function renderContextBar() {
+  const bar = $('#ctxbar');
+  if (!bar) return;
+  const ctx = getContext();
+  const protos = store.list('prototypes');
+  const pilots = store.list('pilots');
+  const circuits = store.list('circuits');
+
+  const sel = (field, title, placeholder, groups) => {
+    const s = h('select', {
+      class: 'ctx-select', 'aria-label': title, title,
+      onchange: (e) => setContext({ [field]: e.target.value || null }),
+    }, h('option', { value: '' }, placeholder));
+    for (const g of groups) {
+      if (!g.items.length) continue;
+      const parent = g.label ? h('optgroup', { label: g.label }) : s;
+      for (const it of g.items) parent.append(h('option', { value: it.id, selected: it.id === ctx[field] }, it.text));
+      if (g.label) s.append(parent);
+    }
+    s.classList.toggle('set', !!ctx[field]);
+    return h('label', { class: 'ctx-item' }, h('span', { class: 'ctx-k' }, title), s);
+  };
+
+  // Revisiones: primero las vinculadas al prototipo activo.
+  const linked = ctx.prototypeId ? circuits.filter((c) => (c.prototypeIds || []).includes(ctx.prototypeId)) : [];
+  const others = circuits.filter((c) => !linked.includes(c));
+  const proto = ctx.prototypeId && store.get('prototypes', ctx.prototypeId);
+
+  clear(bar).append(
+    sel('pilotId', 'Piloto', '— piloto —', [{ items: pilots.map((p) => ({ id: p.id, text: labelOf('pilots', p) })) }]),
+    sel('prototypeId', 'Prototipo', '— prototipo —', [{ items: protos.map((p) => ({ id: p.id, text: labelOf('prototypes', p) })) }]),
+    sel('circuitId', 'Circuito', '— circuito —', [
+      { label: linked.length ? `Vinculados a ${proto?.code || 'prototipo'}` : null, items: linked.map((c) => ({ id: c.id, text: labelOf('circuits', c) })) },
+      { label: linked.length ? 'Otros' : null, items: others.map((c) => ({ id: c.id, text: labelOf('circuits', c) })) },
+    ]),
+  );
+}
+
+return { startShell, navigate, rerender };
+})();
+/* ---- js/ui/dialogs.js ---- */
+__m['js/ui/dialogs.js'] = (() => {
+// Avisos (toasts) y diálogos modales.
+const { h, $ } = __m['js/ui/dom.js'];
+const { icon } = __m['js/ui/icons.js'];
+/** Muestra un aviso breve. kind: info | ok | warn | error. action: {label, onClick} */
+function toast(message, { kind = 'info', timeout = 4000, action } = {}) {
+  let host = $('#toasts');
+  if (!host) { host = h('div', { id: 'toasts', 'aria-live': 'polite' }); document.body.append(host); }
+  const close = () => { el.classList.add('out'); setTimeout(() => el.remove(), 250); };
+  const el = h('div', { class: `toast ${kind}`, role: kind === 'error' ? 'alert' : 'status' },
+    h('span', null, message),
+    action && h('button', { class: 'btn small', type: 'button', onclick: () => { close(); action.onClick(); } }, action.label),
+    h('button', { class: 'icon-btn', type: 'button', 'aria-label': 'Cerrar', html: icon('x', 16), onclick: close }),
+  );
+  host.append(el);
+  if (timeout) setTimeout(close, timeout);
+  return close;
+}
+
+/**
+ * Diálogo modal genérico. content: nodo o texto. buttons: [{label, value, kind}]
+ * Resuelve con el value del botón pulsado (o null si se cierra).
+ */
+function modal({ title, content, buttons = [{ label: 'Aceptar', value: true, kind: 'primary' }], wide = false }) {
+  return new Promise((resolve) => {
+    const dlg = h('dialog', { class: `modal${wide ? ' wide' : ''}` });
+    const finish = (v) => { dlg.close(); dlg.remove(); resolve(v); };
+    dlg.append(
+      h('div', { class: 'modal-head' },
+        h('h2', null, title),
+        h('button', { class: 'icon-btn', type: 'button', 'aria-label': 'Cerrar', html: icon('x'), onclick: () => finish(null) })),
+      h('div', { class: 'modal-body' }, typeof content === 'string' ? h('p', null, content) : content),
+      h('div', { class: 'modal-foot' },
+        buttons.map((b) => h('button', {
+          class: `btn ${b.kind || ''}`, type: 'button', disabled: b.disabled,
+          onclick: () => (b.validate ? b.validate() && finish(b.value) : finish(b.value)),
+        }, b.label))),
+    );
+    dlg.addEventListener('cancel', (e) => { e.preventDefault(); finish(null); });
+    document.body.append(dlg);
+    dlg.showModal();
+  });
+}
+
+function confirmDialog(title, message, { okLabel = 'Confirmar', danger = false } = {}) {
+  return modal({
+    title, content: message,
+    buttons: [{ label: 'Cancelar', value: false }, { label: okLabel, value: true, kind: danger ? 'danger' : 'primary' }],
+  }).then((v) => v === true);
+}
+
+/** Confirmación fuerte: el usuario debe escribir una palabra. */
+function typedConfirm(title, message, word, okLabel = 'Borrar') {
+  const input = h('input', { type: 'text', class: 'input', autocomplete: 'off', placeholder: word });
+  const content = h('div', null, h('p', null, message), h('p', { class: 'muted' }, `Escribe ${word} para confirmar.`), input);
+  setTimeout(() => input.focus(), 50);
+  return modal({
+    title, content,
+    buttons: [
+      { label: 'Cancelar', value: false },
+      { label: okLabel, value: true, kind: 'danger', validate: () => input.value.trim().toUpperCase() === word.toUpperCase() || (input.classList.add('invalid'), false) },
+    ],
+  }).then((v) => v === true);
+}
+
+return { toast, modal, confirmDialog, typedConfirm };
+})();
+/* ---- js/core/demo.js ---- */
+__m['js/core/demo.js'] = (() => {
+// Datos de ejemplo para probar la app (marcados con demo: true para poder borrarlos).
+const store = __m['js/core/store.js'];
+const { COLLECTIONS } = __m['js/core/schema.js'];
+function hasDemo() {
+  return COLLECTIONS.some((c) => store.list(c, (r) => r.demo).length > 0);
+}
+
+async function loadDemo() {
+  if (hasDemo()) return false;
+  const p10 = await store.create('prototypes', {
+    demo: true, code: 'v1.0', name: 'Exo rodilla', deviceType: 'exoesqueleto', joint: 'rodilla', side: 'R',
+    status: 'validado', changelog: 'Primera versión: brazo de palanca 80 mm, servo 35 kgf·cm.',
+    limits: { romMinDeg: 0, romMaxDeg: 100, maxTorqueNm: 15 },
+  });
+  const p11 = await store.create('prototypes', {
+    demo: true, code: 'v1.1', parentId: p10.id, name: 'Exo rodilla', deviceType: 'exoesqueleto', joint: 'rodilla', side: 'R',
+    status: 'en_pruebas', changelog: 'Brazo de palanca 80→95 mm; tope mecánico a 110°.',
+    limits: { romMinDeg: 0, romMaxDeg: 110, maxTorqueNm: 25 },
+  });
+  await store.create('prototypes', {
+    demo: true, code: 'v0.3', name: 'Mano mioeléctrica', deviceType: 'protesis_superior', joint: 'mano_mcp', side: 'L',
+    status: 'diseño', changelog: 'Dedos impresos en PLA, tendones de nylon.',
+    limits: { romMinDeg: 0, romMaxDeg: 90, maxTorqueNm: 0.6 },
+  });
+  const ra = await store.create('circuits', {
+    demo: true, name: 'Placa control EMG', rev: 'Rev A', mcu: 'ESP32', prototypeIds: [p10.id],
+    pinout: [
+      { pin: 'GPIO34', signal: 'EMG_L', dir: 'in', voltage: '3.3V', connectsTo: 'MyoWare L · SIG', notes: '' },
+      { pin: 'GPIO35', signal: 'EMG_R', dir: 'in', voltage: '3.3V', connectsTo: 'MyoWare R · SIG', notes: '' },
+    ],
+    changes: 'Versión inicial.', status: 'reemplazada',
+  });
+  await store.create('circuits', {
+    demo: true, name: 'Placa control EMG', rev: 'Rev B', parentId: ra.id, mcu: 'ESP32-S3', prototypeIds: [p11.id],
+    pinout: [
+      { pin: 'GPIO4', signal: 'EMG_L', dir: 'in', voltage: '3.3V', connectsTo: 'MyoWare L · SIG', notes: '' },
+      { pin: 'GPIO5', signal: 'EMG_R', dir: 'in', voltage: '3.3V', connectsTo: 'MyoWare R · SIG', notes: '' },
+      { pin: 'GPIO8', signal: 'SDA', dir: 'io', voltage: '3.3V', connectsTo: 'BNO055 · SDA', notes: '' },
+      { pin: 'GPIO9', signal: 'SCL', dir: 'out', voltage: '3.3V', connectsTo: 'BNO055 · SCL', notes: '' },
+    ],
+    changes: 'Cambio a ESP32-S3 (USB nativo) y se añade IMU BNO055.', status: 'activa',
+  });
+  await store.create('pilots', {
+    demo: true, code: 'P-001', consentConfirmed: true,
+    profile: { ageRange: '20-29', laterality: 'diestro', massKg: 72, heightCm: 175 },
+  });
+  await store.create('pilots', {
+    demo: true, code: 'P-002', consentConfirmed: true,
+    profile: { ageRange: '30-39', laterality: 'zurdo', massKg: 64, heightCm: 168 },
+  });
+  return true;
+}
+
+async function removeDemo() {
+  const byCollection = {};
+  for (const c of COLLECTIONS) byCollection[c] = store.list(c, (r) => r.demo).map((r) => r.id);
+  await store.removeMany(byCollection);
+}
+
+return { hasDemo, loadDemo, removeDemo };
+})();
+/* ---- js/core/catalogs.js ---- */
+__m['js/core/catalogs.js'] = (() => {
+// Catálogos de referencia compartidos por los módulos.
+
+const DEVICE_TYPES = [
+  { id: 'protesis_superior', label: 'Prótesis de miembro superior' },
+  { id: 'protesis_inferior', label: 'Prótesis de miembro inferior' },
+  { id: 'exoesqueleto', label: 'Exoesqueleto' },
+  { id: 'ortesis', label: 'Órtesis' },
+  { id: 'banco', label: 'Banco de pruebas' },
+  { id: 'otro', label: 'Otro' },
+];
+
+const PROTOTYPE_STATUS = [
+  { id: 'diseño', label: 'Diseño' },
+  { id: 'fabricacion', label: 'Fabricación' },
+  { id: 'en_pruebas', label: 'En pruebas' },
+  { id: 'validado', label: 'Validado' },
+  { id: 'descartado', label: 'Descartado' },
+];
+
+const SIDES = [
+  { id: 'L', label: 'Izquierdo' },
+  { id: 'R', label: 'Derecho' },
+  { id: 'B', label: 'Bilateral' },
+  { id: 'N', label: 'No aplica' },
+];
+
+/**
+ * Articulaciones y rangos de movimiento de referencia (grados, valores
+ * aproximados de uso clínico común). Editables en cada prototipo/piloto.
+ */
+const JOINTS = [
+  { id: 'hombro', label: 'Hombro', rom: { flexion: [0, 180], extension: [0, 60], abduccion: [0, 180], rot_interna: [0, 70], rot_externa: [0, 90] } },
+  { id: 'codo', label: 'Codo', rom: { flexion: [0, 150], pronacion: [0, 80], supinacion: [0, 80] } },
+  { id: 'muneca', label: 'Muñeca', rom: { flexion: [0, 80], extension: [0, 70], desv_radial: [0, 20], desv_cubital: [0, 30] } },
+  { id: 'mano_mcp', label: 'Dedos – MCP', rom: { flexion: [0, 90] } },
+  { id: 'mano_ifp', label: 'Dedos – IFP', rom: { flexion: [0, 100] } },
+  { id: 'mano_ifd', label: 'Dedos – IFD', rom: { flexion: [0, 90] } },
+  { id: 'pulgar', label: 'Pulgar (CMC)', rom: { flexion: [0, 15], abduccion: [0, 70] } },
+  { id: 'cadera', label: 'Cadera', rom: { flexion: [0, 120], extension: [0, 30], abduccion: [0, 45], aduccion: [0, 30] } },
+  { id: 'rodilla', label: 'Rodilla', rom: { flexion: [0, 135] } },
+  { id: 'tobillo', label: 'Tobillo', rom: { dorsiflexion: [0, 20], plantarflexion: [0, 50], inversion: [0, 35], eversion: [0, 15] } },
+  { id: 'columna', label: 'Columna / tronco', rom: { flexion: [0, 80], extension: [0, 25] } },
+  { id: 'otra', label: 'Otra', rom: {} },
+];
+
+/**
+ * Parámetros antropométricos de segmentos (Winter, Biomechanics and Motor
+ * Control of Human Movement). massFrac: fracción de la masa corporal;
+ * comFrac: posición del centro de masa desde el extremo proximal (fracción
+ * de la longitud del segmento); lenFrac: longitud aproximada como fracción
+ * de la estatura.
+ */
+const SEGMENTS = [
+  { id: 'brazo', label: 'Brazo', massFrac: 0.028, comFrac: 0.436, lenFrac: 0.186 },
+  { id: 'antebrazo', label: 'Antebrazo', massFrac: 0.016, comFrac: 0.430, lenFrac: 0.146 },
+  { id: 'mano', label: 'Mano', massFrac: 0.006, comFrac: 0.506, lenFrac: 0.108 },
+  { id: 'antebrazo_mano', label: 'Antebrazo + mano', massFrac: 0.022, comFrac: 0.682, lenFrac: 0.146 },
+  { id: 'muslo', label: 'Muslo', massFrac: 0.100, comFrac: 0.433, lenFrac: 0.245 },
+  { id: 'pierna', label: 'Pierna (tibia)', massFrac: 0.0465, comFrac: 0.433, lenFrac: 0.246 },
+  { id: 'pie', label: 'Pie', massFrac: 0.0145, comFrac: 0.50, lenFrac: 0.152 },
+  { id: 'pierna_pie', label: 'Pierna + pie', massFrac: 0.061, comFrac: 0.606, lenFrac: 0.246 },
+];
+
+const CHANNEL_KINDS = [
+  { id: 'emg', label: 'EMG', unit: 'mV' },
+  { id: 'accel', label: 'Acelerómetro', unit: 'm/s²' },
+  { id: 'gyro', label: 'Giroscopio', unit: '°/s' },
+  { id: 'mag', label: 'Magnetómetro', unit: 'µT' },
+  { id: 'quat', label: 'Cuaternión', unit: '' },
+  { id: 'angle', label: 'Ángulo articular', unit: '°' },
+  { id: 'force', label: 'Fuerza (celda de carga)', unit: 'N' },
+  { id: 'pressure', label: 'Presión (FSR)', unit: 'kPa' },
+  { id: 'current', label: 'Corriente', unit: 'mA' },
+  { id: 'voltage', label: 'Tensión', unit: 'V' },
+  { id: 'temperature', label: 'Temperatura', unit: '°C' },
+  { id: 'encoder', label: 'Encoder', unit: 'cuentas' },
+  { id: 'generic', label: 'Genérico', unit: '' },
+];
+
+const MCUS = [
+  'ESP32', 'ESP32-S3', 'ESP32-C3', 'Arduino Uno', 'Arduino Nano', 'Arduino Leonardo', 'Arduino Micro',
+  'Arduino Mega', 'RP2040 (Pico)', 'STM32 (Blue Pill / Nucleo)', 'Teensy 4.x', 'Otro',
+];
+
+const SENSORS = [
+  'MyoWare 2.0 (EMG)', 'EMG genérico (AD8232 / INA)', 'MPU6050', 'MPU9250', 'ICM-20948', 'BNO055', 'BNO085',
+  'AS5600 (encoder magnético)', 'Potenciómetro', 'HX711 + celda de carga', 'FSR', 'INA219 (corriente)', 'Otro',
+];
+
+const AGE_RANGES = ['<18', '18-19', '20-29', '30-39', '40-49', '50-59', '60-69', '70+'];
+
+return { DEVICE_TYPES, PROTOTYPE_STATUS, SIDES, JOINTS, SEGMENTS, CHANNEL_KINDS, MCUS, SENSORS, AGE_RANGES };
+})();
+/* ---- js/core/units.js ---- */
+__m['js/core/units.js'] = (() => {
+// Unidades y conversiones. Cada categoría tiene una unidad base (SI) y factores a la base.
+// Valor_en_base = valor × factor.
+
+const UNITS = {
+  force: {
+    label: 'Fuerza', base: 'N',
+    units: { N: 1, kN: 1e3, mN: 1e-3, kgf: 9.80665, gf: 9.80665e-3, lbf: 4.4482216152605, ozf: 0.27801385095378 },
+  },
+  torque: {
+    label: 'Torque / momento', base: 'N·m',
+    units: {
+      'N·m': 1, 'N·cm': 1e-2, 'N·mm': 1e-3, 'mN·m': 1e-3,
+      'kgf·m': 9.80665, 'kgf·cm': 9.80665e-2, 'gf·cm': 9.80665e-5,
+      'lbf·ft': 1.3558179483314, 'lbf·in': 0.1129848290276, 'ozf·in': 7.0615518142e-3,
+    },
+  },
+  length: {
+    label: 'Longitud', base: 'm',
+    units: { m: 1, cm: 1e-2, mm: 1e-3, 'µm': 1e-6, in: 0.0254, ft: 0.3048 },
+  },
+  mass: {
+    label: 'Masa', base: 'kg',
+    units: { kg: 1, g: 1e-3, mg: 1e-6, lb: 0.45359237, oz: 0.028349523125 },
+  },
+  angle: {
+    label: 'Ángulo', base: 'rad',
+    units: { rad: 1, '°': Math.PI / 180, mrad: 1e-3, rev: 2 * Math.PI },
+  },
+  angularVelocity: {
+    label: 'Velocidad angular', base: 'rad/s',
+    units: { 'rad/s': 1, '°/s': Math.PI / 180, rpm: (2 * Math.PI) / 60, 'rev/s': 2 * Math.PI },
+  },
+  speed: {
+    label: 'Velocidad lineal', base: 'm/s',
+    units: { 'm/s': 1, 'mm/s': 1e-3, 'cm/s': 1e-2, 'km/h': 1 / 3.6, 'in/s': 0.0254 },
+  },
+  acceleration: {
+    label: 'Aceleración', base: 'm/s²',
+    units: { 'm/s²': 1, g: 9.80665, 'mg (gravedad)': 9.80665e-3 },
+  },
+  pressure: {
+    label: 'Presión', base: 'Pa',
+    units: { Pa: 1, kPa: 1e3, MPa: 1e6, bar: 1e5, mbar: 100, psi: 6894.757293168, mmHg: 133.322387415, 'N/mm²': 1e6 },
+  },
+  voltage: {
+    label: 'Tensión', base: 'V',
+    units: { V: 1, mV: 1e-3, 'µV': 1e-6, kV: 1e3 },
+  },
+  current: {
+    label: 'Corriente', base: 'A',
+    units: { A: 1, mA: 1e-3, 'µA': 1e-6 },
+  },
+  resistance: {
+    label: 'Resistencia', base: 'Ω',
+    units: { 'Ω': 1, 'kΩ': 1e3, 'MΩ': 1e6, 'mΩ': 1e-3 },
+  },
+  capacitance: {
+    label: 'Capacitancia', base: 'F',
+    units: { F: 1, mF: 1e-3, 'µF': 1e-6, nF: 1e-9, pF: 1e-12 },
+  },
+  charge: {
+    label: 'Carga (batería)', base: 'C',
+    units: { C: 1, mAh: 3.6, Ah: 3600 },
+  },
+  energy: {
+    label: 'Energía', base: 'J',
+    units: { J: 1, kJ: 1e3, Wh: 3600, mWh: 3.6, cal: 4.184, kcal: 4184 },
+  },
+  power: {
+    label: 'Potencia', base: 'W',
+    units: { W: 1, mW: 1e-3, kW: 1e3, hp: 745.69987158227 },
+  },
+  frequency: {
+    label: 'Frecuencia', base: 'Hz',
+    units: { Hz: 1, kHz: 1e3, MHz: 1e6 },
+  },
+  time: {
+    label: 'Tiempo', base: 's',
+    units: { s: 1, ms: 1e-3, 'µs': 1e-6, min: 60, h: 3600 },
+  },
+  temperature: {
+    label: 'Temperatura', base: '°C',
+    units: { '°C': null, K: null, '°F': null }, // conversión especial
+  },
+};
+
+const TEMP_TO_C = { '°C': (v) => v, K: (v) => v - 273.15, '°F': (v) => ((v - 32) * 5) / 9 };
+const TEMP_FROM_C = { '°C': (v) => v, K: (v) => v + 273.15, '°F': (v) => (v * 9) / 5 + 32 };
+
+/** Convierte value de la unidad `from` a `to` dentro de `category`. */
+function convert(value, from, to, category) {
+  const cat = UNITS[category];
+  if (!cat) throw new Error(`Categoría desconocida: ${category}`);
+  if (!(from in cat.units) || !(to in cat.units)) throw new Error(`Unidad no válida en ${category}: ${from} → ${to}`);
+  const v = Number(value);
+  if (!Number.isFinite(v)) return NaN;
+  if (category === 'temperature') return TEMP_FROM_C[to](TEMP_TO_C[from](v));
+  return (v * cat.units[from]) / cat.units[to];
+}
+
+const toBase = (value, unit, category) => convert(value, unit, UNITS[category].base, category);
+const fromBase = (value, unit, category) => convert(value, UNITS[category].base, unit, category);
+
+/** Formato numérico con cifras significativas (punto decimal, coherente con CSV). */
+function fmt(value, sig = 5) {
+  const v = Number(value);
+  if (!Number.isFinite(v)) return '—';
+  if (v === 0) return '0';
+  const a = Math.abs(v);
+  if (a >= 1e7 || a < 1e-4) return v.toExponential(Math.max(0, sig - 1)).replace(/\.?0+e/, 'e');
+  const s = v.toPrecision(sig);
+  return s.includes('.') ? s.replace(/\.?0+$/, '') : s;
+}
+
+return { UNITS, convert, toBase, fromBase, fmt };
+})();
+/* ---- js/modules/home.js ---- */
+__m['js/modules/home.js'] = (() => {
+// Inicio: contexto activo, resumen de datos, aviso de respaldo y conversor de unidades.
+const { h, clear } = __m['js/ui/dom.js'];
+const { icon } = __m['js/ui/icons.js'];
+const store = __m['js/core/store.js'];
+const { labelOf } = __m['js/core/schema.js'];
+const { getContext, onContext } = __m['js/core/context.js'];
+const { backupOverdue, lastBackup } = __m['js/core/backup.js'];
+const { loadDemo, hasDemo } = __m['js/core/demo.js'];
+const { DEVICE_TYPES, JOINTS, PROTOTYPE_STATUS } = __m['js/core/catalogs.js'];
+const { UNITS, convert, fmt } = __m['js/core/units.js'];
+const { toast } = __m['js/ui/dialogs.js'];
+const { fmtDate } = __m['js/ui/dom.js'];
+const STAGES = [
+  ['0', 'Núcleo: datos locales, contexto, respaldo, unidades, PWA', true],
+  ['1', 'Bitácora + prototipos + checklist de banco', false],
+  ['2', 'Circuitos + calculadoras electrónicas', false],
+  ['3', 'Pilotos', false],
+  ['4', 'Torque, palancas y ángulos', false],
+  ['5', 'Monitor de señales (sim, CSV, USB, BLE, MQTT)', false],
+  ['6', 'Integración y archivo único', false],
+];
+
+const findLabel = (list, id) => list.find((x) => x.id === id)?.label || id || '—';
+
+const __default = {
+  render(el) {
+    const body = h('div');
+    el.append(h('div', { class: 'page-head' }, h('h1', null, h('span', { html: icon('home', 26) }), 'Inicio')), body);
+
+    let gen = 0;
+    const draw = async () => {
+      const my = ++gen;
+      const overdue = await backupOverdue(7);
+      const lb = overdue ? await lastBackup() : null;
+      if (my !== gen) return; // otra actualización más reciente ya está dibujando
+      clear(body);
+      const total = store.totalRecords();
+
+      // Aviso de respaldo
+      if (overdue) {
+        body.append(h('div', { class: 'banner warn' },
+          h('span', { html: icon('alert') }),
+          h('span', null, lb ? `Tu último respaldo fue el ${fmtDate(lb.at, false)}.` : 'Aún no has hecho ningún respaldo.',
+            ' Los datos viven solo en este dispositivo.'),
+          h('a', { class: 'btn small', href: '#/datos' }, 'Respaldar')));
+      }
+
+      // Bienvenida si no hay datos
+      if (total === 0) {
+        body.append(h('section', { class: 'card hero' },
+          h('h2', null, 'Bienvenido a SYNAPSE'),
+          h('p', null, 'Tus datos se guardan solo en este dispositivo. Para probar la app puedes cargar datos de ejemplo (un exoesqueleto de rodilla v1.0 → v1.1, dos revisiones de circuito y dos pilotos) y borrarlos después desde Datos.'),
+          h('button', {
+            class: 'btn primary', type: 'button',
+            onclick: async () => { await loadDemo(); toast('Datos de ejemplo cargados', { kind: 'ok' }); },
+          }, 'Cargar datos de ejemplo')));
+      }
+
+      // Contexto activo
+      const ctx = getContext();
+      const pil = ctx.pilotId && store.get('pilots', ctx.pilotId);
+      const pro = ctx.prototypeId && store.get('prototypes', ctx.prototypeId);
+      const cir = ctx.circuitId && store.get('circuits', ctx.circuitId);
+      const linkedWarn = pro && cir && !(cir.prototypeIds || []).includes(pro.id);
+      body.append(h('section', { class: 'card' },
+        h('h2', null, 'Contexto activo'),
+        h('p', { class: 'muted' }, 'Lo que elijas en la barra superior se vincula automáticamente a cada registro nuevo.'),
+        h('div', { class: 'ctx-grid' },
+          ctxTile('Piloto', pil ? labelOf('pilots', pil) : null,
+            pil && [pil.profile?.ageRange && `Edad ${pil.profile.ageRange}`, pil.profile?.massKg && `${pil.profile.massKg} kg`, pil.profile?.heightCm && `${pil.profile.heightCm} cm`].filter(Boolean).join(' · ')),
+          ctxTile('Prototipo', pro ? labelOf('prototypes', pro) : null,
+            pro && [findLabel(DEVICE_TYPES, pro.deviceType), findLabel(JOINTS, pro.joint), findLabel(PROTOTYPE_STATUS, pro.status)].join(' · ')),
+          ctxTile('Circuito', cir ? labelOf('circuits', cir) : null, cir && [cir.mcu, `${(cir.pinout || []).length} pines`].filter(Boolean).join(' · '))),
+        linkedWarn && h('p', { class: 'note warn' }, `Ojo: ${labelOf('circuits', cir)} no está vinculado a ${pro.code}. Verifica que sea la combinación correcta antes de probar.`)));
+
+      // Resumen
+      const c = store.counts();
+      const tiles = [
+        ['Prototipos', c.prototypes, 'bitacora', 'logbook'],
+        ['Registros de bitácora', c.tests, 'bitacora', 'logbook'],
+        ['Circuitos', c.circuits, 'circuitos', 'circuits'],
+        ['Pilotos', c.pilots, 'pilotos', 'pilots'],
+        ['Sesiones de señal', c.signalSessions, 'senales', 'signals'],
+        ['Cálculos guardados', c.calculations, 'torque', 'torque'],
+      ];
+      body.append(h('section', { class: 'card' },
+        h('h2', null, 'Resumen'),
+        h('div', { class: 'stat-grid' }, tiles.map(([label, n, route, ic]) =>
+          h('a', { class: 'stat', href: `#/${route}` }, h('span', { html: icon(ic) }), h('strong', null, String(n)), h('span', null, label)))),
+        hasDemo() && h('p', { class: 'muted small' }, 'Incluye datos de ejemplo. Puedes borrarlos en Datos.')));
+
+      body.append(converterCard());
+
+      body.append(h('section', { class: 'card' },
+        h('h2', null, 'Progreso de construcción'),
+        h('ol', { class: 'stages' }, STAGES.map(([n, t, done]) =>
+          h('li', { class: done ? 'done' : '' }, h('span', { class: 'stage-n' }, n), t)))));
+    };
+
+    draw();
+    const off1 = store.onChange(draw);
+    const off2 = onContext(draw);
+    return () => { off1(); off2(); };
+  },
+};
+
+function ctxTile(k, v, sub) {
+  return h('div', { class: `ctx-tile${v ? '' : ' empty'}` },
+    h('span', { class: 'ctx-k' }, k),
+    h('strong', null, v || 'Sin seleccionar'),
+    sub && h('span', { class: 'muted small' }, sub));
+}
+
+/** Conversor de unidades rápido (todas las categorías). */
+function converterCard() {
+  const cats = Object.entries(UNITS);
+  const catSel = h('select', { class: 'input', 'aria-label': 'Magnitud' }, cats.map(([id, c]) => h('option', { value: id, selected: id === 'torque' }, c.label)));
+  const val = h('input', { class: 'input', type: 'number', step: 'any', value: '1', inputmode: 'decimal', 'aria-label': 'Valor' });
+  const from = h('select', { class: 'input', 'aria-label': 'De' });
+  const to = h('select', { class: 'input', 'aria-label': 'A' });
+  const out = h('output', { class: 'conv-out' });
+  const all = h('div', { class: 'conv-all' });
+
+  const fillUnits = () => {
+    const units = Object.keys(UNITS[catSel.value].units);
+    clear(from); clear(to);
+    units.forEach((u, i) => {
+      from.append(h('option', { value: u, selected: i === (catSel.value === 'torque' ? 5 : 0) }, u));
+      to.append(h('option', { value: u, selected: i === 0 }, u));
+    });
+    calc();
+  };
+  const calc = () => {
+    const cat = catSel.value;
+    const v = convert(val.value, from.value, to.value, cat);
+    out.textContent = Number.isFinite(v) ? `${fmt(v, 6)} ${to.value}` : '—';
+    clear(all).append(...Object.keys(UNITS[cat].units).filter((u) => u !== from.value).map((u) =>
+      h('span', { class: 'chip' }, `${fmt(convert(val.value, from.value, u, cat), 5)} ${u}`)));
+  };
+  catSel.addEventListener('change', fillUnits);
+  [val, from, to].forEach((e) => e.addEventListener('input', calc));
+  const swap = h('button', {
+    class: 'icon-btn', type: 'button', title: 'Invertir', 'aria-label': 'Invertir unidades', html: icon('swap'),
+    onclick: () => { const a = from.value; from.value = to.value; to.value = a; calc(); },
+  });
+  fillUnits();
+  return h('section', { class: 'card' },
+    h('h2', null, 'Conversor de unidades'),
+    h('div', { class: 'conv-row' }, catSel, val, from, swap, to),
+    out, all);
+}
+
+return { default: __default };
+})();
+/* ---- js/modules/data.js ---- */
+__m['js/modules/data.js'] = (() => {
+// Datos y respaldo: exportar, importar, auto-respaldo, almacenamiento, instalación y datos de ejemplo.
+const { h, clear, fmtDate, fmtBytes } = __m['js/ui/dom.js'];
+const { icon } = __m['js/ui/icons.js'];
+const store = __m['js/core/store.js'];
+const { COLLECTIONS, COLLECTION_LABELS, SCHEMA_VERSION } = __m['js/core/schema.js'];
+const bk = __m['js/core/backup.js'];
+const { storageInfo, requestPersist, isIOS, isStandalone } = __m['js/core/storage.js'];
+const { canPromptInstall, promptInstall, onInstallAvailability } = __m['js/core/install.js'];
+const { loadDemo, removeDemo, hasDemo } = __m['js/core/demo.js'];
+const { toast, modal, confirmDialog, typedConfirm } = __m['js/ui/dialogs.js'];
+const __default = {
+  render(el) {
+    const body = h('div');
+    el.append(h('div', { class: 'page-head' }, h('h1', null, h('span', { html: icon('data', 26) }), 'Datos y respaldo')), body);
+
+    let gen = 0;
+    const draw = async () => {
+      const my = ++gen;
+      const [st, auto, lb] = await Promise.all([storageInfo(), bk.autoBackupStatus(), bk.lastBackup()]);
+      if (my !== gen) return;
+      clear(body).append(
+        exportCard(lb, draw),
+        importCard(),
+        autoCard(auto, draw),
+        storageCard(st, draw),
+        installCard(),
+        demoCard(),
+        dangerCard(),
+        h('p', { class: 'muted small center' }, `SYNAPSE ${self.SYNAPSE_VERSION || 'dev'} · esquema de datos v${SCHEMA_VERSION}`),
+      );
+    };
+    draw();
+    const off1 = store.onChange(draw);
+    const off2 = onInstallAvailability(draw);
+    return () => { off1(); off2(); };
+  },
+};
+
+// ---------- Exportar ----------
+function exportCard(lb, redraw) {
+  const inc = h('input', { type: 'checkbox', checked: true, id: 'inc-signals' });
+  const opts = () => ({ includeSignals: inc.checked });
+  const run = async (fn, okMsg) => {
+    try { await fn(opts()); toast(okMsg, { kind: 'ok' }); redraw(); } catch (e) {
+      if (e?.name === 'AbortError') return; // el usuario canceló
+      toast(`No se pudo exportar: ${e.message}`, { kind: 'error', timeout: 7000 });
+    }
+  };
+  const total = store.totalRecords();
+  return h('section', { class: 'card' },
+    h('h2', null, 'Exportar respaldo completo'),
+    h('p', { class: 'muted' }, `Un archivo JSON con todos tus registros (${total}) y, si quieres, las muestras de señal. Guárdalo fuera del dispositivo.`),
+    h('label', { class: 'check' }, inc, ' Incluir muestras de señal (archivo más grande)'),
+    h('div', { class: 'btn-row' },
+      h('button', { class: 'btn primary', type: 'button', onclick: () => run(bk.exportDownload, 'Respaldo descargado') },
+        h('span', { html: icon('download', 18) }), 'Descargar JSON'),
+      bk.canShareFiles() && h('button', { class: 'btn', type: 'button', onclick: () => run(bk.exportShare, 'Respaldo compartido') },
+        h('span', { html: icon('share', 18) }), 'Compartir (Drive, Archivos…)')),
+    h('p', { class: 'muted small' }, lb ? `Último respaldo: ${fmtDate(lb.at)} (${lb.method}).` : 'Todavía no has hecho ningún respaldo.'));
+}
+
+// ---------- Importar ----------
+function importCard() {
+  const input = h('input', { type: 'file', accept: '.json,application/json', class: 'visually-hidden', id: 'import-file' });
+  input.addEventListener('change', async () => {
+    const file = input.files?.[0];
+    input.value = '';
+    if (!file) return;
+    let obj;
+    try {
+      obj = bk.validateBackup(JSON.parse(await file.text()));
+    } catch (e) {
+      toast(`Archivo no válido: ${e.message}`, { kind: 'error', timeout: 8000 });
+      return;
+    }
+    const s = bk.summarize(obj);
+    const rows = COLLECTIONS.filter((c) => s.counts[c]).map((c) => h('li', null, `${COLLECTION_LABELS[c]}: ${s.counts[c]}`));
+    if (s.signals) rows.push(h('li', null, `Muestras de señal: ${s.signals} sesiones`));
+    const choice = await modal({
+      title: 'Importar respaldo',
+      content: h('div', null,
+        h('p', null, `Archivo: ${file.name} · exportado ${fmtDate(s.exportedAt)} (SYNAPSE ${s.appVersion || '?'})`),
+        rows.length ? h('ul', null, rows) : h('p', { class: 'muted' }, 'El respaldo está vacío.'),
+        h('p', null, h('strong', null, 'Fusionar: '), 'agrega lo nuevo y, si un registro existe en ambos lados, conserva la versión editada más recientemente. Tus datos actuales se mantienen.'),
+        h('p', null, h('strong', null, 'Reemplazar todo: '), 'borra los datos de este dispositivo y deja solo los del archivo.')),
+      buttons: [
+        { label: 'Cancelar', value: null },
+        { label: 'Reemplazar todo', value: 'replace', kind: 'danger' },
+        { label: 'Fusionar', value: 'merge', kind: 'primary' },
+      ],
+    });
+    try {
+      if (choice === 'merge') {
+        const rep = await bk.importMerge(obj);
+        toast(bk.describeMergeReport(rep), { kind: 'ok', timeout: 7000 });
+      } else if (choice === 'replace') {
+        const ok = await confirmDialog('¿Reemplazar todos los datos?', `Se borrarán los ${store.totalRecords()} registros actuales de este dispositivo. Si no tienes respaldo de ellos, se perderán.`, { okLabel: 'Reemplazar', danger: true });
+        if (!ok) return;
+        await bk.importReplace(obj);
+        toast('Datos reemplazados por el respaldo', { kind: 'ok' });
+      }
+    } catch (e) {
+      toast(`Error al importar: ${e.message}`, { kind: 'error', timeout: 8000 });
+    }
+  });
+  return h('section', { class: 'card' },
+    h('h2', null, 'Importar'),
+    h('p', { class: 'muted' }, 'Restaura un respaldo o trae datos de otro dispositivo. Antes de aplicar nada verás qué contiene.'),
+    input,
+    h('label', { class: 'btn', for: 'import-file', tabindex: '0', onkeydown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); } } },
+      h('span', { html: icon('upload', 18) }), 'Elegir archivo JSON'));
+}
+
+// ---------- Auto-respaldo ----------
+function autoCard(st, redraw) {
+  const card = h('section', { class: 'card' }, h('h2', null, 'Auto-respaldo en carpeta'));
+  if (!st.supported) {
+    card.append(
+      h('p', { class: 'muted' }, 'Este navegador no permite escribir en carpetas (solo Chrome y Edge de escritorio lo hacen).'),
+      h('p', null, isIOS() || /android/i.test(navigator.userAgent)
+        ? 'En el celular usa “Compartir” arriba para guardar el respaldo en Drive o Archivos. SYNAPSE te recordará respaldar cada 7 días.'
+        : 'Usa “Descargar JSON” con regularidad. SYNAPSE te recordará respaldar cada 7 días.'));
+    return card;
+  }
+  const act = async (fn, ok) => {
+    try { const r = await fn(); if (ok) toast(ok, { kind: 'ok' }); redraw(); return r; } catch (e) {
+      if (e?.name !== 'AbortError') toast(e.message, { kind: 'error', timeout: 7000 });
+    }
+  };
+  if (!st.configured) {
+    card.append(
+      h('p', { class: 'muted' }, 'Elige una carpeta (idealmente sincronizada con Drive, OneDrive o Dropbox). SYNAPSE guardará ahí un respaldo unos segundos después de cada cambio y otro por día.'),
+      h('button', { class: 'btn primary', type: 'button', onclick: () => act(bk.chooseAutoBackupFolder, 'Auto-respaldo activado') },
+        h('span', { html: icon('folder', 18) }), 'Elegir carpeta'));
+    return card;
+  }
+  const granted = st.permission === 'granted';
+  card.append(
+    h('p', null, 'Carpeta: ', h('strong', null, st.folder), ' · ',
+      granted ? h('span', { class: 'ok-text' }, 'activo') : h('span', { class: 'warn-text' }, 'en pausa: el navegador pide permiso de nuevo en cada sesión')),
+    h('p', { class: 'muted small' }, 'Archivos: synapse-auto.json (el más reciente) y synapse-AAAA-MM-DD.json (uno por día).'),
+    h('div', { class: 'btn-row' },
+      !granted && h('button', { class: 'btn primary', type: 'button', onclick: () => act(bk.regrantAutoBackup, null) }, 'Reactivar permiso'),
+      granted && h('button', {
+        class: 'btn', type: 'button',
+        onclick: () => act(async () => { if (!(await bk.writeAutoBackup())) throw new Error('No se pudo escribir en la carpeta.'); }, 'Respaldo escrito en la carpeta'),
+      }, 'Respaldar ahora'),
+      h('button', { class: 'btn', type: 'button', onclick: () => act(bk.chooseAutoBackupFolder, 'Carpeta cambiada') }, 'Cambiar carpeta'),
+      h('button', { class: 'btn ghost', type: 'button', onclick: () => act(bk.disableAutoBackup, 'Auto-respaldo desactivado') }, 'Desactivar')));
+  return card;
+}
+
+// ---------- Almacenamiento ----------
+function storageCard(st, redraw) {
+  const pct = st.usage != null && st.quota ? (st.usage / st.quota) * 100 : null;
+  return h('section', { class: 'card' },
+    h('h2', null, 'Almacenamiento en este dispositivo'),
+    h('p', null, `Usado: ${fmtBytes(st.usage)} de ${fmtBytes(st.quota)} disponibles`, pct != null ? ` (${pct < 0.1 ? '<0.1' : pct.toFixed(1)} %)` : ''),
+    pct != null && h('div', { class: 'meter' }, h('span', { style: { width: `${Math.max(0.5, Math.min(100, pct))}%` } })),
+    h('p', null, 'Almacenamiento persistente: ',
+      st.persisted ? h('span', { class: 'ok-text' }, 'sí, el navegador no borrará los datos por falta de espacio')
+        : h('span', { class: 'warn-text' }, st.persistSupported ? 'no concedido todavía' : 'no disponible en este navegador')),
+    !st.persisted && st.persistSupported && h('button', {
+      class: 'btn', type: 'button',
+      onclick: async () => {
+        const ok = await requestPersist();
+        toast(ok ? 'Almacenamiento persistente concedido' : 'El navegador no lo concedió. Instalar la app suele ayudar.', { kind: ok ? 'ok' : 'warn', timeout: 6000 });
+        redraw();
+      },
+    }, 'Solicitar almacenamiento persistente'),
+    isIOS() && !isStandalone() && h('p', { class: 'note warn' }, 'En iPhone, Safari puede borrar los datos de una web que no usas en 7 días. Instala SYNAPSE en la pantalla de inicio para evitarlo (ver abajo).'));
+}
+
+// ---------- Instalar ----------
+function installCard() {
+  const card = h('section', { class: 'card' }, h('h2', null, 'Instalar la app'));
+  if (location.protocol === 'file:') {
+    card.append(
+      h('p', null, 'Estás usando el archivo único (synapse.html). Funciona sin internet, pero no se puede instalar como app.'),
+      h('p', { class: 'note warn' }, 'Los datos de este archivo quedan en este navegador y son independientes de la versión publicada en GitHub Pages. Para pasarlos de una a otra usa Exportar → Importar (Fusionar).'));
+  } else if (isStandalone()) {
+    card.append(h('p', { class: 'ok-text' }, 'SYNAPSE está instalada y funciona sin conexión.'));
+  } else if (canPromptInstall()) {
+    card.append(
+      h('p', { class: 'muted' }, 'Instálala para abrirla como app, sin barra del navegador y sin conexión.'),
+      h('button', { class: 'btn primary', type: 'button', onclick: async () => { if (await promptInstall()) toast('SYNAPSE instalada', { kind: 'ok' }); } }, 'Instalar SYNAPSE'));
+  } else if (isIOS()) {
+    card.append(h('ol', null,
+      h('li', null, 'Abre esta página en Safari.'),
+      h('li', null, 'Toca el botón Compartir (cuadro con flecha).'),
+      h('li', null, 'Elige “Agregar a pantalla de inicio”.')));
+  } else {
+    card.append(h('p', { class: 'muted' }, 'Usa el menú del navegador → “Instalar app” o “Agregar a pantalla de inicio”. Una vez cargada, SYNAPSE funciona sin conexión.'));
+  }
+  return card;
+}
+
+// ---------- Datos de ejemplo ----------
+function demoCard() {
+  const has = hasDemo();
+  return h('section', { class: 'card' },
+    h('h2', null, 'Datos de ejemplo'),
+    h('p', { class: 'muted' }, 'Registros de prueba marcados como “ejemplo”. Borrarlos no toca tus datos reales.'),
+    has
+      ? h('button', { class: 'btn', type: 'button', onclick: async () => { await removeDemo(); toast('Datos de ejemplo borrados', { kind: 'ok' }); } },
+        h('span', { html: icon('trash', 18) }), 'Borrar datos de ejemplo')
+      : h('button', { class: 'btn', type: 'button', onclick: async () => { await loadDemo(); toast('Datos de ejemplo cargados', { kind: 'ok' }); } },
+        h('span', { html: icon('plus', 18) }), 'Cargar datos de ejemplo'));
+}
+
+// ---------- Zona peligrosa ----------
+function dangerCard() {
+  return h('section', { class: 'card danger-zone' },
+    h('h2', null, 'Borrar todo'),
+    h('p', { class: 'muted' }, 'Elimina todos los registros y señales de este dispositivo. Descarga un respaldo antes.'),
+    h('button', {
+      class: 'btn danger', type: 'button', disabled: store.totalRecords() === 0,
+      onclick: async () => {
+        if (!(await typedConfirm('Borrar todos los datos', `Se eliminarán ${store.totalRecords()} registros y todas las muestras de señal de este dispositivo. No se puede deshacer.`, 'BORRAR'))) return;
+        await store.replaceAll({}, []);
+        toast('Todos los datos fueron borrados', { kind: 'ok' });
+      },
+    }, 'Borrar todos los datos'));
+}
+
+return { default: __default };
+})();
+/* ---- js/modules/placeholder.js ---- */
+__m['js/modules/placeholder.js'] = (() => {
+// Vista provisional para módulos que se construyen en etapas posteriores.
+const { h } = __m['js/ui/dom.js'];
+const { icon } = __m['js/ui/icons.js'];
+function placeholder({ title, iconName, stage, summary, features }) {
+  return {
+    render(el) {
+      el.append(
+        h('div', { class: 'page-head' },
+          h('h1', null, h('span', { html: icon(iconName, 26) }), title)),
+        h('section', { class: 'card placeholder' },
+          h('p', { class: 'badge' }, `Se construye en la etapa ${stage}`),
+          h('p', null, summary),
+          h('ul', { class: 'feature-list' }, features.map((f) => h('li', null, f)))),
+      );
+    },
+  };
+}
+
+return { placeholder };
+})();
+/* ---- js/app.js ---- */
+__m['js/app.js'] = (() => {
+// Punto de entrada de SYNAPSE.
+const { initStore, onChange, totalRecords } = __m['js/core/store.js'];
+const { sanitizeContext } = __m['js/core/context.js'];
+const { startAutoBackup } = __m['js/core/backup.js'];
+const { requestPersist } = __m['js/core/storage.js'];
+const { initInstall } = __m['js/core/install.js'];
+const { startShell } = __m['js/ui/shell.js'];
+const { toast } = __m['js/ui/dialogs.js'];
+const { h } = __m['js/ui/dom.js'];
+const home = __m['js/modules/home.js'].default;
+const data = __m['js/modules/data.js'].default;
+const { placeholder } = __m['js/modules/placeholder.js'];
+const ROUTES = [
+  { id: 'inicio', label: 'Inicio', icon: 'home', module: home },
+  {
+    id: 'senales', label: 'Señales', icon: 'signals',
+    module: placeholder({
+      title: 'Monitor de señales', iconName: 'signals', stage: 5,
+      summary: 'Gráficas en tiempo real o por muestras de EMG, IMU, ángulos, fuerza y más, con comparación izquierda/derecha.',
+      features: ['Fuentes: simulador, CSV/JSON/SD, Web Serial, WebUSB (Android), BLE, MQTT sobre WSS, puente local, IMU del teléfono',
+        'Procesamiento EMG (RMS, envolvente, %MVC) e IMU (filtro complementario)',
+        'Simetría L/R: índice SI, razón, picos, desfase por correlación', 'Marcadores y exportación CSV/JSON'],
+    }),
+  },
+  {
+    id: 'bitacora', label: 'Bitácora', icon: 'logbook',
+    module: placeholder({
+      title: 'Bitácora de pruebas', iconName: 'logbook', stage: 1,
+      summary: 'Experimentos, ajustes, calibraciones y fallos vinculados a cada versión de prototipo.',
+      features: ['Árbol de versiones v1.0 → v1.1', 'Fichas de fallo con causa raíz y acción', 'Checklist de seguridad de banco antes de energizar o probar con piloto'],
+    }),
+  },
+  {
+    id: 'torque', label: 'Torque', short: 'Torque', icon: 'torque',
+    module: placeholder({
+      title: 'Torque, palancas y ángulos', iconName: 'torque', stage: 4,
+      summary: 'Cálculos biomecánicos con fórmula y sustitución visibles.',
+      features: ['τ = F·d·sinθ y torque gravitacional por segmento (Winter)', 'Ventaja mecánica, transmisión y factor de seguridad', 'Actuador lineal ↔ ángulo y rangos articulares'],
+    }),
+  },
+  {
+    id: 'circuitos', label: 'Circuitos', icon: 'circuits',
+    module: placeholder({
+      title: 'Diseño de circuitos', iconName: 'circuits', stage: 2,
+      summary: 'Revisiones de circuito, pinouts, conexiones, cambios y fallos.',
+      features: ['Rev A → Rev B con diff de pinout', 'Avisos de pines duplicados y niveles 3.3 V/5 V', 'Calculadoras: resistencia limitadora, divisor, ganancias, RC, ADC, batería'],
+    }),
+  },
+  {
+    id: 'pilotos', label: 'Pilotos', icon: 'pilots',
+    module: placeholder({
+      title: 'Pilotos y sujetos de prueba', iconName: 'pilots', stage: 3,
+      summary: 'Fichas anónimas por código con ajustes, calibración base y observaciones.',
+      features: ['Antropometría y calibración base (MVC, offsets IMU)', 'Comodidad y fatiga por sesión', 'Vínculos con pruebas, prototipos y señales'],
+    }),
+  },
+  { id: 'datos', label: 'Datos y respaldo', icon: 'data', module: data, hidden: true },
+];
+
+function fatal(err) {
+  window.SYNAPSE_STARTED = true; // el mensaje de error propio reemplaza al diagnóstico de arranque
+  const app = document.getElementById('app');
+  app.replaceChildren(h('div', { class: 'fatal' },
+    h('h1', null, 'SYNAPSE no pudo iniciar'),
+    h('p', null, err?.message || String(err)),
+    h('p', { class: 'muted' }, 'Prueba recargar la página. Si usas modo privado/incógnito, ábrela en una ventana normal.')));
+}
+
+window.addEventListener('unhandledrejection', (e) => {
+  console.error(e.reason);
+  toast(`Error: ${e.reason?.message || e.reason}`, { kind: 'error', timeout: 7000 });
+});
+
+async function main() {
+  initInstall();
+  await initStore();
+  sanitizeContext();
+  startShell(ROUTES);
+  window.SYNAPSE_STARTED = true;
+
+  // Pedimos almacenamiento persistente en cuanto haya datos que proteger.
+  if (totalRecords() > 0) requestPersist();
+  else { const off = onChange(() => { requestPersist(); off(); }); }
+
+  startAutoBackup((ok, err) => {
+    if (err) toast('El auto-respaldo falló. Revisa la carpeta en Datos.', { kind: 'warn' });
+  });
+
+  registerSW();
+}
+
+function registerSW() {
+  if (!('serviceWorker' in navigator) || location.protocol === 'file:') return;
+  navigator.serviceWorker.register('./sw.js').then((reg) => {
+    const offer = (worker) => toast('Hay una nueva versión de SYNAPSE.', {
+      timeout: 0, action: { label: 'Actualizar', onClick: () => worker.postMessage('SKIP_WAITING') },
+    });
+    if (reg.waiting && navigator.serviceWorker.controller) offer(reg.waiting);
+    reg.addEventListener('updatefound', () => {
+      const w = reg.installing;
+      w?.addEventListener('statechange', () => {
+        if (w.state === 'installed' && navigator.serviceWorker.controller) offer(w);
+      });
+    });
+    // Buscar actualizaciones al volver a la app.
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update().catch(() => {}); });
+  }).catch((e) => console.warn('Service worker no registrado', e));
+
+  let reloading = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (reloading) return;
+    reloading = true;
+    location.reload();
+  });
+}
+
+main().catch(fatal);
+
+return {  };
+})();
+</script>
 </head>
 <body>
   <div id="app">
     <div class="boot">
-      <img src="icons/icon.svg" alt="" width="56" height="56">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0iIzBiMTAxNiIvPjxnIHN0cm9rZT0iIzNlZTZjNCIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMjU2IDI2MiBMMTM4IDE0OCIvPjxwYXRoIGQ9Ik0yNTYgMjYyIEwzODIgMTU4Ii8+PHBhdGggZD0iTTI1NiAyNjIgTDI1NiA0MDQiLz48L2c+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjYyIiByPSI2MCIgZmlsbD0iIzNlZTZjNCIvPjxjaXJjbGUgY3g9IjEzOCIgY3k9IjE0OCIgcj0iMzIiIGZpbGw9IiM1YWE5ZmYiLz48Y2lyY2xlIGN4PSIzODIiIGN5PSIxNTgiIHI9IjMyIiBmaWxsPSIjZmY4YTVjIi8+PGNpcmNsZSBjeD0iMjU2IiBjeT0iNDA0IiByPSIzMiIgZmlsbD0iIzNlZTZjNCIvPjwvc3ZnPg==" alt="" width="56" height="56">
       <p>Cargando SYNAPSE…</p>
       <noscript><p>SYNAPSE necesita JavaScript activado.</p></noscript>
     </div>
